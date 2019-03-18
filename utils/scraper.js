@@ -28,9 +28,8 @@ class Scraper {
       target.method = target.method || "GET";
       let response = await axios(target);
       let data = null;
-
       if (isJson) {
-        data = extractor(response.data);
+        data = extractor(response.data.Conversion.Currency);
       } else {
         const html = response.data;
         const $ = cheerio.load(html);
@@ -38,8 +37,10 @@ class Scraper {
       }
 
       await this.saveToBotApi(data);
+      console.log(data);
       return data;
     } catch (e) {
+      //
       let msg = e.message;
       if (errorHandler) errorHandler(msg);
       else this.handleError(msg);
