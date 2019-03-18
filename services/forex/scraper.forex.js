@@ -18,25 +18,11 @@ module.exports = async () => {
       url: botUrl + "/forex/feed"
     }
   });
-  try {
-    let response = await axios.get(url);
-    let data = response.data.Conversion.Currency;
-    console.log(data);
-    await scraper.saveToBotApi(data);
-    return data;
-  } catch (error) {
-    return scraper.handleError(error);
-  }
+  return scraper.process({
+    target: { url },
+    isJson: true,
+    extractor: d => {
+      return d;
+    }
+  });
 };
-
-// let forex = res.data.Conversion.Currency;
-// forex = forex.map(d => {
-//   return {
-//     date: d.Date,
-//     base_currency: d.BaseCurrency,
-//     target_currency: d.TargetCurrency,
-//     base_value: d.BaseValue,
-//     buy: d.TargetBuy,
-//     sell: d.TargetSell
-//   };
-// });
