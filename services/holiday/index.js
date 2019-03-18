@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const HolidayController = require("./holiday.controller");
+const holidayScraper = require("./scraper.holiday");
 
 router.get("/", async (req, res, next) => {
-  await HolidayController.create();
-  res.send("Success");
+  let data = await holidayScraper();
+  res.send(data);
 });
 
 module.exports = router;
