@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const BullionController = require("./bullion.controller");
+const bullionScraper = require("./scraper.bullion");
 
 router.get("/", async (req, res, next) => {
-  await BullionController.create();
-  res.send("Success");
+  let data = await bullionScraper();
+  res.send(data);
 });
 
 module.exports = router;

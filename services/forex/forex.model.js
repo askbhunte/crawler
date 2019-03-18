@@ -1,45 +1,16 @@
-const mongoose = require("mongoose");
+// const axios = require("axios");
+// const cheerio = require("cheerio");
 
-const ForexSchema = mongoose.Schema(
-  {
-    date: {
-      type: Date,
-      required: true
-    },
-    base_currency: {
-      type: String,
-      required: true
-    },
-    target_currency: {
-      type: String,
-      required: true
-    },
-    base_value: {
-      type: Number,
-      required: true
-    },
-    buy: {
-      type: Number,
-      default: null
-    },
-    sell: {
-      type: Number,
-      required: true
-    }
-  },
-  {
-    collection: "forex",
-    timestamps: {
-      createdAt: "created_at",
-      updatedAt: "updated_at"
-    },
-    toObject: {
-      virtuals: true
-    },
-    toJson: {
-      virtuals: true
-    }
-  }
-);
+// async function abc() {
+//   let response = await axios(
+//     "https://nrb.org.np/exportForexJSON.php?YY=2019&MM=03&DD=16&YY1=2019&MM1=03&DD1=16"
+//   );
+//   // const html = response.data;
+//   // const $ = cheerio.load(html);
+//   // let data = extractor($);
+//   console.log(response.data.Conversion.Currency);
+// }
+// abc();
 
-module.exports = mongoose.model("Forex", ForexSchema);
+const scrape = require("./scraper.forex");
+console.log(scrape);

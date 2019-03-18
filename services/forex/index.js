@@ -1,9 +1,8 @@
 const router = require("express").Router();
-const ForexController = require("./forex.controller");
-
+const forexScraper = require("./scraper.forex");
 router.get("/", async (req, res, next) => {
-  await ForexController.create();
-  res.send("Success");
+  let data = await forexScraper();
+  res.send(data);
 });
 
 module.exports = router;
