@@ -3,6 +3,7 @@ const departurescraper = require("./scraper.departure");
 const arrivalscraper = require("./scraper.arrival");
 
 router.get("/departure", async (req, res, next) => {
+  console.log("Hello");
   let data = await departurescraper();
   res.send("Success");
 });

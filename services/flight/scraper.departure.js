@@ -8,7 +8,7 @@ let url =
 
 module.exports = async () => {
   let scraper = new ScraperClient({
-    name: "FlightDeparture",
+    name: "Dep",
     repo: {
       url: botUrl + "/flight/feed"
     }
@@ -53,7 +53,8 @@ module.exports = async () => {
                 .trim()
             };
         });
-      return { departureArr };
+
+      return departureArr;
     }
   });
 };
