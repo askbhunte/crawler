@@ -37,7 +37,6 @@ class Scraper {
       }
 
       await this.saveToBotApi(data);
-      console.log(data);
       return data;
     } catch (e) {
       //

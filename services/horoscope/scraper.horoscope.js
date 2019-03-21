@@ -16,7 +16,7 @@ module.exports = async horoscope => {
   return scraper.process({
     target: { url: url + "/" + horoscope },
     extractor: $ => {
-      var data = {
+      let obj = {
         horoscope,
         image: $(".row")
           .find(".wp-caption")
@@ -27,11 +27,7 @@ module.exports = async horoscope => {
           .find("p:first-child")
           .text()
       };
-      console.log(data);
-      return {
-        horoscope,
-        data
-      };
+      return data;
     }
   });
 };

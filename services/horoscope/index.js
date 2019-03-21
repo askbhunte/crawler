@@ -16,9 +16,10 @@ router.get("/", async (req, res, next) => {
     "Cancer",
     "Taurus"
   ];
-  let data;
+  let data = [];
   for (let i = 0; i < horoscopes.length; i++) {
-    data = await horoscopeScraper(horoscopes[i]);
+    let obj = await horoscopeScraper(horoscopes[i]);
+    data.push(obj);
   }
   res.send(data);
 });
