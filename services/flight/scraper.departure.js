@@ -53,8 +53,22 @@ module.exports = async () => {
                 .trim()
             };
         });
+      var filtered = departureArr.filter(function(el) {
+        return el != null;
+      });
+      var departuredata = filtered.map(elem => {
+        return {
+          plane_code: elem.plane_code,
+          origin: "(KTM) Kathmandu",
+          url: elem.link,
+          flight_status: elem.flight_status,
+          arrival_time: null,
+          departure_time: elem.departure,
+          destination: elem.destination
+        };
+      });
 
-      return departureArr;
+      return departuredata;
     }
   });
 };
