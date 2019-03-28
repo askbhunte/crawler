@@ -6,22 +6,21 @@ router.get("/", async (req, res, next) => {
     "libra",
     "aries",
     "leo",
-    "Virgo",
-    "Scorpio",
-    "Sagittarius",
-    "Capricorn",
-    "Aquarius",
-    "Pisces",
-    "Gemini",
-    "Cancer",
-    "Taurus"
+    "virgo",
+    "scorpio",
+    "sagittarius",
+    "capricorn",
+    "aquarius",
+    "pisces",
+    "gemini",
+    "cancer",
+    "taurus"
   ];
-  let data = [];
+  let data;
   for (let i = 0; i < horoscopes.length; i++) {
-    let obj = await horoscopeScraper(horoscopes[i]);
-    data.push(obj);
+    data = await horoscopeScraper(horoscopes[i]);
   }
-  res.send(data);
+  res.sendStatus(200);
 });
 
 module.exports = router;

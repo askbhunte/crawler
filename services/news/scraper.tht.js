@@ -5,18 +5,28 @@ const ScraperClient = require("../../utils/scraper");
 let boturl = config.get("services.nepalbot.url");
 let url = "https://thehimalayantimes.com/category";
 let name = "THT";
-
-module.exports = async category => {
+let category;
+module.exports = async payload => {
   let scraper = new ScraperClient({
     name,
     repo: {
       url: boturl + "/news/feed"
     }
   });
-
+  console.log(payload);
   return scraper.process({
-    target: { url: url + "/" + category },
+    target: { url: url + "/" + payload },
     extractor: $ => {
+      if (payload === "nepal") {
+        category = "national";
+      } else if (payload === "entertainment") {
+        category = "variety";
+      } else if (payload === "science-technology") {
+        category = "technology";
+      } else {
+        category = payload;
+      }
+
       var data = [];
       $(".mainNews")
         .find("li")
