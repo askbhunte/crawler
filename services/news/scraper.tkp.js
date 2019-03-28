@@ -47,6 +47,38 @@ module.exports = async category => {
               .text()
           };
       });
+      if (data.length === 0)
+        $(".col-md-6").each(function(i, elem) {
+          if (
+            $(this)
+              .find(".item-wrap")
+              .find("h2")
+              .text() !== ""
+          )
+            data[i] = {
+              source: name,
+              category,
+              title: $(this)
+                .find(".item-wrap")
+                .find("h2")
+                .text(),
+              img_url:
+                $(this)
+                  .find("img")
+                  .attr("data-original") ||
+                "http://nextgrowthconclave.com/wp-content/uploads/2017/11/KathmanduPost-50.jpg",
+              url:
+                "http://kathmandupost.ekantipur.com/" +
+                $(this)
+                  .find(".item-wrap")
+                  .find("a")
+                  .attr("href"),
+              summary: $(this)
+                .find(".teaser")
+                .text()
+            };
+        });
+      data = data.filter(d => d.source != undefined);
       return {
         source: name,
         category,

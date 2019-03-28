@@ -24,12 +24,12 @@ router.get("/tht", async (req, res, next) => {
 });
 
 router.get("/tkp", async (req, res, next) => {
-  let categories = ["national", "sports", "technology", "world", "escalate", "health-living"];
+  let categories = ["sports", "national", "technology", "world", "escalate", "health-living"];
   let data;
   for (let i = 0; i < categories.length; i++) {
     data = await tkp(categories[i]);
   }
-  res.sendStatus(200);
+  res.send(data);
 });
 
 router.get("/myr", async (req, res, next) => {
