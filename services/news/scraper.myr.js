@@ -5,8 +5,8 @@ const ScraperClient = require("../../utils/scraper");
 let boturl = config.get("services.nepalbot.url");
 let url = "https://myrepublica.nagariknetwork.com/category";
 let name = "MYR";
-
-module.exports = async category => {
+let category;
+module.exports = async payload => {
   let scraper = new ScraperClient({
     name,
     repo: {
@@ -14,8 +14,14 @@ module.exports = async category => {
     }
   });
   return scraper.process({
-    target: { url: url + "/" + category },
+    target: { url: url + "/" + payload },
     extractor: $ => {
+      if (payload === "economy") {
+        category = "business";
+      } else {
+        category = payload;
+      }
+      console.log(category);
       var data = [];
       $(".categories-list-info").each(function(i, elem) {
         data[i] = {
