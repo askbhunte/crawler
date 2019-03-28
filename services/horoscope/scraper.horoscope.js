@@ -27,7 +27,6 @@ module.exports = async horoscope => {
           .find("p:first-child")
           .text()
       };
-
       return data;
     }
   });
