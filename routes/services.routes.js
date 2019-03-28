@@ -19,7 +19,7 @@ router.use("/movie", movieRouter);
 
 router.use("/flight", flightRouter);
 // router.use("/pollution", pollutionRouter);
-// router.use("/stock", stockRouter);
+router.use("/stock", stockRouter);
 router.use("/bullion", bullionRouter);
 
 module.exports = router;
