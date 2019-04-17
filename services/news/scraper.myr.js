@@ -21,7 +21,6 @@ module.exports = async payload => {
       } else {
         category = payload;
       }
-      console.log(category);
       var data = [];
       $(".categories-list-info").each(function(i, elem) {
         data[i] = {

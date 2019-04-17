@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const bullionScraper = require("./scraper.bullion");
+const neaScraper = require("./scraper.nea");
 
 router.get("/", async (req, res, next) => {
-  let data = await bullionScraper();
+  let data = await neaScraper();
   res.sendStatus(200);
 });
 
