@@ -31,7 +31,7 @@ module.exports = async payload => {
             .find("h2")
             .text(),
           url:
-            "https://myrepublica.nagariknetwork.com/" +
+            "https://myrepublica.nagariknetwork.com" +
             $(this)
               .find(".main-heading")
               .find("a")
@@ -52,6 +52,14 @@ module.exports = async payload => {
             .split(":")
             .pop()
         };
+      });
+      data.filter(el => {
+        let baseUrl = "https://myrepublica.nagariknetwork.com";
+        if (el.img_url.includes(baseUrl)) {
+          return (el.img_url = el.img_url);
+        } else {
+          return (el.img_url = baseUrl + el.img_url);
+        }
       });
       return {
         source: name,
