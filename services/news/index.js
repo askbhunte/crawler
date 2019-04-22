@@ -29,9 +29,8 @@ router.get("/tkp", async (req, res, next) => {
   for (let i = 0; i < categories.length; i++) {
     data = await tkp(categories[i]);
   }
-  res.send(data);
+  res.sendStatus(200);
 });
-
 router.get("/myr", async (req, res, next) => {
   let categories = ["politics", "economy", "world", "sports", "society", "opinion"];
   let data;
