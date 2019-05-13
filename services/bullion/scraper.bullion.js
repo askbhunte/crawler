@@ -34,7 +34,7 @@ module.exports = async () => {
         });
       bullionArr = bullionArr.splice(4, 6);
       let date =
-        -$(".rate-date")
+        $(".rate-date")
           .find(".rate-date-day")
           .text() +
         " " +
