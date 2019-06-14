@@ -3,7 +3,7 @@ const { templates, sendMail } = require("../../utils/messenger");
 const ScraperClient = require("../../utils/scraper");
 
 let botUrl = config.get("services.nepalbot.url");
-let url = "https://www.sharesansar.com/today-share-price";
+let url = "http://www.nepalstock.com/todaysprice?_limit=500";
 
 module.exports = async () => {
   let scraper = new ScraperClient({
@@ -18,36 +18,28 @@ module.exports = async () => {
     extractor: $ => {
       let data = [];
       $("table")
-        .find("tr")
+        .find("tr:not(:first-child,:nth-child(2))")
         .each(function(i, elem) {
-          if (
-            $(this)
-              .find("td:nth-child(2)")
-              .find("a")
-              .text() &&
-            $(this)
-              .find("td:nth-child(7)")
-              .text() !== ""
-          )
-            data[i] = {
-              traded_company: $(this)
-                .find("td:nth-child(2)")
-                .find("a")
-                .text(),
-              symbol: $(this)
-                .find("td:nth-child(3)")
-                .find("a")
-                .text(),
-              close: $(this)
-                .find("td:nth-child(7)")
-                .text(),
-              prev_close: $(this)
-                .find("td:nth-child(9)")
-                .text(),
-              diff: $(this)
-                .find("td:nth-child(12)")
-                .text()
-            };
+          data[i] = {
+            traded_company: $(this)
+              .find("td")
+              .eq(1)
+              .text(),
+            close: $(this)
+              .find("td")
+              .eq(5)
+              .text(),
+
+            prev_close: $(this)
+              .find("td")
+              .eq(8)
+              .text(),
+            diff: $(this)
+              .find("td")
+              .eq(9)
+              .text()
+              .replace(/[\n]| +/g, "")
+          };
         });
       return data.filter(el => el != null);
     }
