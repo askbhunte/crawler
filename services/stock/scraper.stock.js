@@ -74,7 +74,7 @@ module.exports = async () => {
       data = data.filter(el => el != null);
 
       //replace with livedata
-      let liveData = $("marquee ").text();
+      let liveData = $("marquee").text();
       liveData = liveData.split(")  ");
       liveData = liveData.map(d => {
         let str = d.trim();
@@ -88,7 +88,12 @@ module.exports = async () => {
           difference: arr[3]
         };
       });
-      console.log(liveData);
+
+      let date = $("#date").html();
+      date = date.replace("As of ", "");
+      date = date.replace("&#xA0;&#xA0;  ", "");
+      date = date.replace(" &#xA0;&#xA0; ", "");
+      console.log(date);
 
       data = data.map(d => {
         let match = liveData.find(c => c.symbol == d.symbol);
@@ -97,6 +102,7 @@ module.exports = async () => {
           d.volume = match.volume;
           d.difference = match.difference;
         }
+        d.updated_at = date;
         return d;
       });
 
