@@ -1,6 +1,7 @@
 const config = require("config");
 const { templates, sendMail } = require("../../utils/messenger");
 const ScraperClient = require("../../utils/scraper");
+const fs = require("fs");
 
 let botUrl = config.get("services.nepalbot.url");
 let url = "http://www.nepalstock.com/todaysprice?_limit=500";
@@ -9,7 +10,7 @@ module.exports = async () => {
   let scraper = new ScraperClient({
     name: "STK",
     repo: {
-      url: botUrl + "/stock/feed"
+      url: botUrl + "/stocks/feed"
     }
   });
 
@@ -21,27 +22,86 @@ module.exports = async () => {
         .find("tr:not(:first-child,:nth-child(2))")
         .each(function(i, elem) {
           data[i] = {
-            traded_company: $(this)
+            name: $(this)
               .find("td")
               .eq(1)
+              .text(),
+            transactions: $(this)
+              .find("td")
+              .eq(2)
+              .text(),
+            max_price: $(this)
+              .find("td")
+              .eq(3)
+              .text(),
+            min_price: $(this)
+              .find("td")
+              .eq(4)
               .text(),
             close: $(this)
               .find("td")
               .eq(5)
               .text(),
-
+            volume: $(this)
+              .find("td")
+              .eq(6)
+              .text(),
+            amount: $(this)
+              .find("td")
+              .eq(7)
+              .text(),
             prev_close: $(this)
               .find("td")
               .eq(8)
               .text(),
-            diff: $(this)
+            difference: $(this)
               .find("td")
               .eq(9)
               .text()
               .replace(/[\n]| +/g, "")
           };
         });
-      return data.filter(el => el != null);
+      data = data.filter(el => el != null);
+      let companies = fs.readFileSync(__dirname + "/companies.json");
+      companies = JSON.parse(companies);
+      data = data.map(d => {
+        let match = companies.find(c => c.name == d.name);
+        if (match) {
+          d.symbol = match.symbol;
+          return d;
+        } else null;
+      });
+      data = data.filter(el => el != null);
+
+      //replace with livedata
+      let liveData = $("marquee ").text();
+      liveData = liveData.split(")  ");
+      liveData = liveData.map(d => {
+        let str = d.trim();
+        str = str.replace("( ", "");
+        str = str.replace(" ) (  ", " ");
+        let arr = str.split(" ");
+        return {
+          symbol: arr[0],
+          close: arr[1] ? arr[1].replace(",", "") : arr[1],
+          volume: arr[2] ? arr[2].replace(",", "") : arr[2],
+          difference: arr[3]
+        };
+      });
+      console.log(liveData);
+
+      data = data.map(d => {
+        let match = liveData.find(c => c.symbol == d.symbol);
+        if (match) {
+          d.close = match.close;
+          d.volume = match.volume;
+          d.difference = match.difference;
+        }
+        return d;
+      });
+
+      data = data.filter(el => el != null);
+      return data;
     }
   });
 };

@@ -40,6 +40,7 @@ class Scraper {
       return data;
     } catch (e) {
       //
+      console.log(e);
       let msg = e.message;
       if (errorHandler) errorHandler(msg);
       else this.handleError(msg);
