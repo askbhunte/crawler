@@ -111,3 +111,11 @@ module.exports = async () => {
     }
   });
 };
+
+// let sample = {
+//   last_trade_date: "",
+//   is_market_open: true,
+//   total_turnover: "34925777",
+//   ...config,
+//   indices: []
+// };
