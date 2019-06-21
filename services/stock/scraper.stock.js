@@ -42,6 +42,10 @@ module.exports = async () => {
               .find("td")
               .eq(5)
               .text(),
+            prev_close: $(this)
+              .find("td")
+              .eq(5)
+              .text(),
             volume: $(this)
               .find("td")
               .eq(6)
@@ -50,7 +54,7 @@ module.exports = async () => {
               .find("td")
               .eq(7)
               .text(),
-            prev_close: $(this)
+            yday_close: $(this)
               .find("td")
               .eq(8)
               .text(),
@@ -88,12 +92,10 @@ module.exports = async () => {
           difference: arr[3]
         };
       });
-
       let date = $("#date").html();
       date = date.replace("As of ", "");
       date = date.replace("&#xA0;&#xA0;  ", "");
       date = date.replace(" &#xA0;&#xA0; ", "");
-      console.log(date);
 
       data = data.map(d => {
         let match = liveData.find(c => c.symbol == d.symbol);
@@ -111,11 +113,3 @@ module.exports = async () => {
     }
   });
 };
-
-// let sample = {
-//   last_trade_date: "",
-//   is_market_open: true,
-//   total_turnover: "34925777",
-//   ...config,
-//   indices: []
-// };

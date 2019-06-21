@@ -10,10 +10,50 @@ const myrScraper = require("../services/news/scraper.myr");
 const thtScraper = require("../services/news/scraper.tht");
 const tkpScraper = require("../services/news/scraper.tkp");
 
-router.get("/", async (req, res, next) => {
+let date = new Date();
+date = date.toTimeString().split(" ")[0];
+
+router.get("/minute", async (req, res, next) => {
   try {
-    let date = new Date();
-    date = date.toTimeString().split(" ")[0];
+    let obj = {
+      stock: stockScraper()
+    };
+    let keys = Object.keys(obj);
+    let data = [];
+    for (var key of keys) {
+      let { start_time, end_time } = scheduler[key];
+      if (date >= start_time && date <= end_time) {
+        data.push(await obj[key]);
+      }
+    }
+  } catch (e) {
+    console.log(e);
+  }
+});
+
+router.get("/hour", async (req, res, next) => {
+  try {
+    let obj = {
+      stock: stockScraper(),
+      myr: myrScraper(),
+      tht: thtScraper(),
+      tkp: tkpScraper()
+    };
+    let keys = Object.keys(obj);
+    let data = [];
+    for (var key of keys) {
+      let { start_time, end_time } = scheduler[key];
+      if (date >= start_time && date <= end_time) {
+        data.push(await obj[key]);
+      }
+    }
+  } catch (e) {
+    console.log(e);
+  }
+});
+
+router.get("/day", async (req, res, next) => {
+  try {
     let obj = {
       stock: stockScraper(),
       movies: qfxScraper(),
@@ -25,6 +65,25 @@ router.get("/", async (req, res, next) => {
       myr: myrScraper(),
       tht: thtScraper(),
       tkp: tkpScraper()
+    };
+    let keys = Object.keys(obj);
+    let data = [];
+    for (var key of keys) {
+      let { start_time, end_time } = scheduler[key];
+      if (date >= start_time && date <= end_time) {
+        data.push(await obj[key]);
+      }
+    }
+  } catch (e) {
+    console.log(e);
+  }
+});
+
+router.get("/week", async (req, res, next) => {
+  try {
+    let obj = {
+      movies: qfxScraper(),
+      holiday: holidayScraper()
     };
     let keys = Object.keys(obj);
     let data = [];
