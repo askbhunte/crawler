@@ -1,6 +1,7 @@
 const config = require("config");
 const axios = require("axios");
 const cheerio = require("cheerio");
+const fs = require("fs");
 const mailer = require("../utils/messenger");
 
 class Scraper {
@@ -17,27 +18,6 @@ class Scraper {
     });
   }
 
-  // async makeSymbol(data) {
-  //   if (data) {
-  //     for (var d of data) {
-  //       let symbol = "";
-  //       let td = d.traded_company;
-  //       if (td) {
-  //         let tds = td.split(" ");
-  //         if (tds) {
-  //           for (var t of tds) {
-  //             let tdd = t.replace(/,/g, "");
-  //             tdd = tdd.replace(/./g, "");
-  //             symbol += tdd.charAt(0).toUpperCase();
-  //           }
-  //         }
-  //       }
-
-  //       d.symbol = symbol;
-  //     }
-  //   }
-  //   return data;
-  // }
   async saveToBotApi(data) {
     let repo = this.repo;
     if (!repo.url) throw "No BOT URL specified";
@@ -51,13 +31,14 @@ class Scraper {
       let response = await axios(target);
       let data = null;
       if (isJson) {
+        //todo if FOOD
         data = extractor(response.data.Conversion.Currency);
+        data = extractor(response.data);
       } else {
         const html = response.data;
         const $ = cheerio.load(html);
         data = extractor($);
       }
-
       await this.saveToBotApi(data);
       return data;
     } catch (e) {
