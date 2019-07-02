@@ -13,7 +13,6 @@ module.exports = async payload => {
       url: boturl + "/news/feed"
     }
   });
-  console.log(payload);
   return scraper.process({
     target: { url: url + "/" + payload },
     extractor: $ => {

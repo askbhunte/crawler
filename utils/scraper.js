@@ -13,7 +13,7 @@ class Scraper {
     await mailer.sendMail({
       from: "service@rumsan.com",
       to: config.get("notification.email"),
-      subject: "NepalBot Scraping Error: " + this.name,
+      subject: "AskBhunte Scraping Error: " + this.name,
       body: e
     });
   }
@@ -32,7 +32,7 @@ class Scraper {
       let data = null;
       if (isJson) {
         //todo if FOOD
-        data = extractor(response.data.Conversion.Currency);
+        // data = extractor(response.data.Conversion.Currency);
         data = extractor(response.data);
       } else {
         const html = response.data;
@@ -42,11 +42,10 @@ class Scraper {
       await this.saveToBotApi(data);
       return data;
     } catch (e) {
-      //
-      console.log(e);
-      let msg = e.message;
-      if (errorHandler) errorHandler(msg);
-      else this.handleError(msg);
+      console.log(e.message);
+      // let msg = e.message;
+      // if (errorHandler) errorHandler(msg);
+      // else this.handleError(msg);
     }
   }
 }

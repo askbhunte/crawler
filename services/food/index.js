@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const food = require("./scraper.food");
+const foodScraper = require("./scraper.food");
 
 router.get("/", async (req, res, next) => {
-  let data = await food();
-  res.send(data);
+  let data = await foodScraper();
+  res.json(data);
 });
 
 module.exports = router;

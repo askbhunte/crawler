@@ -20,7 +20,7 @@ router.get("/tht", async (req, res, next) => {
   for (let i = 0; i < categories.length; i++) {
     data = await tht(categories[i]);
   }
-  res.sendStatus(200);
+  res.json(data);
 });
 
 router.get("/tkp", async (req, res, next) => {
@@ -29,7 +29,7 @@ router.get("/tkp", async (req, res, next) => {
   for (let i = 0; i < categories.length; i++) {
     data = await tkp(categories[i]);
   }
-  res.sendStatus(200);
+  res.json(data);
 });
 router.get("/myr", async (req, res, next) => {
   let categories = ["politics", "economy", "world", "sports", "society", "opinion"];
@@ -37,7 +37,7 @@ router.get("/myr", async (req, res, next) => {
   for (let i = 0; i < categories.length; i++) {
     data = await myr(categories[i]);
   }
-  res.sendStatus(200);
+  res.json(data);
 });
 
 module.exports = router;

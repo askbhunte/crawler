@@ -5,7 +5,7 @@ const ScraperClient = require("../../utils/scraper");
 let date = new Date();
 let year = date.getFullYear();
 let botUrl = config.get("services.nepalbot.url");
-let url = `https://publicholidays.asia/nepal/${year}-dates/#`;
+let url = `https://publicholidays.asia/nepal/2019-dates/`;
 
 module.exports = async () => {
   let scraper = new ScraperClient({
