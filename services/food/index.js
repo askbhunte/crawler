@@ -3,7 +3,7 @@ const foodScraper = require("./scraper.food");
 
 router.get("/", async (req, res, next) => {
   let data = await foodScraper();
-  res.json(data);
+  res.sendStatus(200);
 });
 
 module.exports = router;

@@ -31,8 +31,6 @@ class Scraper {
       let response = await axios(target);
       let data = null;
       if (isJson) {
-        //todo if FOOD
-        // data = extractor(response.data.Conversion.Currency);
         data = extractor(response.data);
       } else {
         const html = response.data;
@@ -43,9 +41,9 @@ class Scraper {
       return data;
     } catch (e) {
       console.log(e.message);
-      // let msg = e.message;
-      // if (errorHandler) errorHandler(msg);
-      // else this.handleError(msg);
+      let msg = e.message;
+      if (errorHandler) errorHandler(msg);
+      else this.handleError(msg);
     }
   }
 }
