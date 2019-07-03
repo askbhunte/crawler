@@ -6,6 +6,7 @@ const newsRouter = require("../services/news");
 const stockRouter = require("../services/stock");
 const bullionRouter = require("../services/bullion");
 const holidayRouter = require("../services/holiday");
+const foodRouter = require("../services/food");
 const horoscopeRouter = require("../services/horoscope");
 
 router.use("/holiday", holidayRouter);
@@ -15,6 +16,7 @@ router.use("/news", newsRouter);
 router.use("/forex", forexRouter);
 router.use("/movie", movieRouter);
 router.use("/stock", stockRouter);
+router.use("/food", foodRouter);
 router.use("/bullion", bullionRouter);
 
 module.exports = router;
