@@ -63,7 +63,6 @@ router.get("/day", async (req, res, next) => {
       forex: forexScraper(),
       bullion: bullionScraper(),
       horoscope: horoscopeScraper(),
-      holiday: holidayScraper(),
       myr: myrScraper(),
       tht: thtScraper(),
       tkp: tkpScraper(),
@@ -74,8 +73,6 @@ router.get("/day", async (req, res, next) => {
     for (var key of keys) {
       let { start_time, end_time } = scheduler[key];
       if (date >= start_time && date <= end_time) {
-        let aaa = await obj[key];
-        // console.log(aaa);
         data.push(await obj[key]);
       }
     }
@@ -88,16 +85,7 @@ router.get("/day", async (req, res, next) => {
 router.get("/week", async (req, res, next) => {
   try {
     let obj = {
-      horoscope: horoscopeScraper(),
-      movies: qfxScraper(),
-      bullion: bullionScraper(),
-      forex: forexScraper(),
       food: foodScraper()
-      // myr: myrScraper(),
-      // tht: thtScraper(),
-      // tkp: tkpScraper()
-
-      // holiday: holidayScraper()
     };
     let keys = Object.keys(obj);
     let data = [];
