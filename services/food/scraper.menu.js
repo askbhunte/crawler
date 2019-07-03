@@ -2,13 +2,13 @@ const axios = require("axios");
 const config = require("config");
 const { templates, sendMail } = require("../../utils/messenger");
 const ScraperClient = require("../../utils/scraper");
-let url = config.get("app.url_food");
 let botUrl = config.get("services.nepalbot.url");
 module.exports = async () => {
+  let url = `https://foodmandu.com/webapi/api/Product/getproducts?Keyword=&vendorid=${id}`;
   let scraper = new ScraperClient({
-    name: "FOD",
+    name: "MNU",
     repo: {
-      url: botUrl + "/food/feed"
+      url: botUrl + "/food/menu/feed"
     }
   });
   return scraper.process({
