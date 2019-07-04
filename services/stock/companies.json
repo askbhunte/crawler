@@ -1,0 +1,1922 @@
+[
+  {
+    "symbol": "SBLD78",
+    "name": "7.5% sbl debenture",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "ADBL",
+    "name": "Agriculture Development Bank Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "AKJCL",
+    "name": "Ankhu Khola Jalvidhyut Company Ltd",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "API",
+    "name": "Api Power Company Ltd.",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "AMFI",
+    "name": "Arambha Microfinance Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "AMFIPO",
+    "name": "Arambha Microfinance Bittiya Sanstha Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "AKPL",
+    "name": "Arun Kabeli Power Ltd.",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "AHPC",
+    "name": "Arun Valley Hydropower Development Co. Ltd.",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "AVU",
+    "name": "Arun Vanaspati Udhyog Limited",
+    "sector": "Manufacturing And Processing"
+  },
+  {
+    "symbol": "ALBSL",
+    "name": "Asha Laghubitta Bittiya Sanstha Ltd",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "ALICL",
+    "name": "Asian Life Insurance Co. Limited",
+    "sector": "Life Insurance"
+  },
+  {
+    "symbol": "ALICLP",
+    "name": "Asian Life Insurance Co. Ltd Promoter Share",
+    "sector": "Life Insurance"
+  },
+  {
+    "symbol": "BOKLPO",
+    "name": "Bank of Kathmandu Limited Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "BOKL",
+    "name": "Bank of Kathmandu Ltd.",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "BARUN",
+    "name": "Barun Hydropower Co. Ltd.",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "BFCPO",
+    "name": "Best Finance Co. Limited Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "BFC",
+    "name": "Best Finance Company Ltd.",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "BHBL",
+    "name": "Bhargav Bikash Bank Ltd.",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "BHBLPO",
+    "name": "Bhargav Bikash Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "BSL",
+    "name": "Birat Shoe Limited",
+    "sector": "Manufacturing And Processing"
+  },
+  {
+    "symbol": "BBC",
+    "name": "Bishal Bazar Company Limited",
+    "sector": "Tradings"
+  },
+  {
+    "symbol": "BSBLPO",
+    "name": "Bishwa Bikas Bank Limited Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "BNL",
+    "name": "Bottlers Nepal (Balaju) Limited",
+    "sector": "Manufacturing And Processing"
+  },
+  {
+    "symbol": "BNT",
+    "name": "Bottlers Nepal (Terai) Limited",
+    "sector": "Manufacturing And Processing"
+  },
+  {
+    "symbol": "BFLPO",
+    "name": "Butwal Finance Limited Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "BPCL",
+    "name": "Butwal Power Company Limited",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "BSM",
+    "name": "Butwal Spinning Mills Limited",
+    "sector": "Manufacturing And Processing"
+  },
+  {
+    "symbol": "CMB",
+    "name": "Capital Merchant Bank & Finance Co. Ltd.",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "CMBFLP",
+    "name": "Capital Merchant Bank. & Fin. Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "CFCL",
+    "name": "Central Finance Co. Ltd.",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "CFCLPO",
+    "name": "Central Finance Co. Ltd. Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "CCBL",
+    "name": "Century Commercial Bank Ltd.",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "CCBLPO",
+    "name": "Century Commercial Bank Ltd. Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "CHLBS",
+    "name": "Chautari Laghubitta Bittya Sanstha Ltd",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "CBBL",
+    "name": "Chhimek Laghubitta Bikas Bank Limited",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "CBBLPO",
+    "name": "Chhimek Laghubitta Bikas Bank Limited Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "CHL",
+    "name": "Chhyangdi Hydropower Ltd.",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "CHCL",
+    "name": "Chilime Hydropower Company Limited",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "CZBIL",
+    "name": "Citizen Bank International Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "CIT",
+    "name": "Citizen Investment Trust",
+    "sector": "Others"
+  },
+  {
+    "symbol": "CZBILP",
+    "name": "Citizens Bank Internatioal Limited Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "CMF1",
+    "name": "Citizens Mutual Fund -1",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "CEFL",
+    "name": "City Express Finance Co. Limited",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "CEFLPO",
+    "name": "City Express Finance Co. Ltd. Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "CBL",
+    "name": "Civil Bank Ltd",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "CBLPO",
+    "name": "Civil Bank Ltd Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "CLBSL",
+    "name": "Civil Laghubitta Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "CORBL",
+    "name": "Corporate Development Bank Limited",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "CORBLP",
+    "name": "Corporate Development Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "CFL",
+    "name": "Crystal Finance Ltd.",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "DDBL",
+    "name": "Deprosc Laghubitta Bittiya Sanstha Limited",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "DDBLPO",
+    "name": "Deprosc LaghuBitta Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "DBBLPO",
+    "name": "Dev BikasBank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "DBBL",
+    "name": "Deva Bikas Bank Limited",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "DHPL",
+    "name": "Dibyashwori Hydropower Ltd.",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "EBL",
+    "name": "Everest Bank Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "EBLCP",
+    "name": "Everest Bank Limited Con. Pref.",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "EBLPO",
+    "name": "Everest Bank Ltd.Promoter",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "EIC",
+    "name": "Everest Insurance Co. Ltd.",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "EICPO",
+    "name": "Everest Insurance Co. Ltd. Promoter Share",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "EDBL",
+    "name": "Excel Development Bank Ltd.",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "EDBLPO",
+    "name": "Excel Development Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "FBBLPO",
+    "name": "Fewa Bikas Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "FMDBL",
+    "name": "First Micro Finance Development Bank Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "FMDBLP",
+    "name": "First Micro Finance Development Bank Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "FHL",
+    "name": "Fleur Himalayan Limited",
+    "sector": "Manufacturing And Processing"
+  },
+  {
+    "symbol": "FOWAD",
+    "name": "Forward Community Microfinance Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "GMFBS",
+    "name": "Ganapati Microfinance Bittiya Sanstha Limited",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "GDBL",
+    "name": "Gandaki Bikas Bank Limited",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "GDBLPO",
+    "name": "Gandaki Bikas Bank Limited Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "GBBL",
+    "name": "Garima Bikas Bank Limited",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "GBBLPO",
+    "name": "Garima Bikas Bank Limited Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "GHL",
+    "name": "Ghalemdi Hydro Limited",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "GBIME",
+    "name": "Global IME Bank Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "GBIMEP",
+    "name": "Global IME Bank Ltd. Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "GILB",
+    "name": "Global IME Laghubitta Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "GILBPO",
+    "name": "Global IME Laghubitta Bittiya Sanstha Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "GIMES1",
+    "name": "Global IME Samunnat Scheme-1",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "GFCL",
+    "name": "Goodwill Finance Co. Ltd.",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "GFCLPO",
+    "name": "Goodwill Finance Co. Ltd. Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "GRU",
+    "name": "Gorakhkali Rubber Udhyog Limited",
+    "sector": "Manufacturing And Processing"
+  },
+  {
+    "symbol": "GBLBS",
+    "name": "Grameen Bikas Laghubitta Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "GBLBSP",
+    "name": "Grameen Bikas Laghubitta Bittiya Sanstha Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "GRDBL",
+    "name": "Green Development Bank Ltd.",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "GRDBLP",
+    "name": "Green Development Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "GMFIL",
+    "name": "Guheshowori Merchant Bank & Finance Co. Ltd.",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "GMFILP",
+    "name": "Guheyshwori Merchant & Finance Ltd. Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "GLBSL",
+    "name": "Gurans Laghubitta Bittiya Sanstha Limited",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "GLICL",
+    "name": "Gurans Life Insurance Company Ltd.",
+    "sector": "Life Insurance"
+  },
+  {
+    "symbol": "GLICLP",
+    "name": "Guras Life Insurance Company Ltd. Promoter Share",
+    "sector": "Life Insurance"
+  },
+  {
+    "symbol": "GUFLPO",
+    "name": "Gurkhas Finance Ltd. Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "GUFL",
+    "name": "Gurkhas Finance Ltd.",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "HAMRO",
+    "name": "Hamro Bikas Bank Ltd.",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "HAMROP",
+    "name": "Hamro Bikas Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "HBT",
+    "name": "Harisiddhi Brick And Tiles Limited",
+    "sector": "Manufacturing And Processing"
+  },
+  {
+    "symbol": "HATH",
+    "name": "Hathway Finance Company Limited",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "HATHPO",
+    "name": "Hathway Finance Company Limited Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "HURJA",
+    "name": "Himalaya Urja Bikas Company Limited",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "HBL",
+    "name": "Himalayan Bank Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "HBLPO",
+    "name": "Himalayan Bank Ltd. Promoter",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "HDL",
+    "name": "Himalayan Distillery Limited",
+    "sector": "Manufacturing And Processing"
+  },
+  {
+    "symbol": "HFL",
+    "name": "Himalayan Finance Limited (Bittiya Sanstha)",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "HGI",
+    "name": "Himalayan General Insurance Co. Ltd",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "HGIPO",
+    "name": "Himalayan General Insurance Co. Ltd Promoter Share",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "HPPL",
+    "name": "Himalayan Power Partner Ltd.",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "HIDCL",
+    "name": "Hydorelectricity Investment and Development Company Ltd",
+    "sector": "Others"
+  },
+  {
+    "symbol": "ICFC",
+    "name": "ICFC Finance Limited",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "ICFCPO",
+    "name": "ICFC Finance Limited Promotor Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "ILFCMP",
+    "name": "ILFCO Microfinance Bittiya Sanstha Ltd. Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "IGIPO",
+    "name": "IME General Insurance Ltd. Promoter Share",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "IGI",
+    "name": "IME General Insurance Ltd.",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "JFLPO",
+    "name": "Janaki Finance Limited Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "JFL",
+    "name": "Janaki Finance Ltd.",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "JBNL",
+    "name": "Janata Bank Nepal Ltd.",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "JBNLPO",
+    "name": "Janata Bank Nepal Ltd. Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "JSLBB",
+    "name": "Janautthan Samudayic Laghubitta Bikas Bank Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "JSLBBP",
+    "name": "Janautthan Samudayic Laghubitta Bikas Bank Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "JEFL",
+    "name": "Jebils Finance Ltd.",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "JEFLPO",
+    "name": "Jebils Finance Ltd. Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "JOSHI",
+    "name": "Joshi Hydropower Development Company Ltd",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "JBBL",
+    "name": "Jyoti Bikas Bank Limited",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "JBBLPO",
+    "name": "Jyoti Bikash Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "JSM",
+    "name": "Jyoti Sinning Mills Limited",
+    "sector": "Manufacturing And Processing"
+  },
+  {
+    "symbol": "KEBL",
+    "name": "Kabeli Bikas Bank Limited",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "KEBLPO",
+    "name": "Kabeli BIkas Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "KBBL",
+    "name": "Kailash Bikas Bank Ltd.",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "KBBLPO",
+    "name": "Kailash Bikas Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "KMCDB",
+    "name": "Kalika Microcredit Development Bank Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "KMCDBP",
+    "name": "Kalika Microcredit Development Bank Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "KPCL",
+    "name": "Kalika power Company Ltd",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "KSBBL",
+    "name": "Kamana Sewa Bikas Bank Limited",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "KSBBLP",
+    "name": "Kamana Sewa Bikas Bank Limited Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "KADBL",
+    "name": "Kanchan Development Bank Limited",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "KADBLP",
+    "name": "Kanchan Development Bank Limited Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "KNBL",
+    "name": "Kankai Bikas Bank Ltd.",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "KNBLPO",
+    "name": "Kankai Bikas Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "KRBL",
+    "name": "Karnali Development Bank Limited",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "KRBLPO",
+    "name": "Karnali Development Bank Limited Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "KKHC",
+    "name": "Khanikhola Hydropower Co. Ltd.",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "KMFL",
+    "name": "Kisan Microfinance Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "KMFLPO",
+    "name": "Kisan Microfinance Bittiya Sanstha Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "KISTPO",
+    "name": "KIST Bank Limited Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "KBL",
+    "name": "Kumari Bank Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "KBLPO",
+    "name": "Kumari Bank Limited Promotor Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "LFCPO",
+    "name": "Lalitpur Finance Co. Ltd. Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "LFC",
+    "name": "Lalitpur Finance Ltd.",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "LBL",
+    "name": "Laxmi Bank Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "LBLPO",
+    "name": "Laxmi Bank Limited Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "LEMF",
+    "name": "Laxmi Equity Fund",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "LLBS",
+    "name": "Laxmi Laghubitta Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "LLBSPO",
+    "name": "Laxmi Laghubitta Bittiya Sanstha Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "LVF1",
+    "name": "Laxmi Value Fund-1",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "LICN",
+    "name": "Life Insurance Co. Nepal",
+    "sector": "Life Insurance"
+  },
+  {
+    "symbol": "LICNPO",
+    "name": "Life Insurance Co. Nepal Promoter Share",
+    "sector": "Life Insurance"
+  },
+  {
+    "symbol": "LBBL",
+    "name": "Lumbini Bikas Bank Ltd.",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "LBBLPO",
+    "name": "Lumbini Bikas Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "LGIL",
+    "name": "Lumbini General Insurance Co. Ltd.",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "LGILPO",
+    "name": "Lumbini General Insurance Co. Ltd. Promoter Share",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "MBLPO",
+    "name": "MachhaPuchhre Bank Limited Promotor Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "MBL",
+    "name": "Machhapuchhre Bank Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "MLBL",
+    "name": "Mahalaxmi Bikas Bank Ltd.",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "MLBLPO",
+    "name": "Mahalxmi Bikas Bank Ltd. Promotor Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "MSMBS",
+    "name": "Mahila Sahayatra Microfinance Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "MSMBSP",
+    "name": "Mahila Sahayatra Microfinance Bittiya Sanstha Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "MSLB",
+    "name": "Mahuli Samudayik Laghubitta Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "MDBLPO",
+    "name": "Malika Development Bank Limited Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "MFIL",
+    "name": "Manjushree Finance Ltd.",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "MFILPO",
+    "name": "Manjushree Finance Ltd. Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "MEGA",
+    "name": "Mega  Bank Nepal Ltd.",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "MEGAPO",
+    "name": "Mega Bank Nepal Ltd. Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "MERO",
+    "name": "Mero Microfinance Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "MEROPO",
+    "name": "Mero Microfinance Bittiya Sanstha Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "MMFDB",
+    "name": "Mirmire Microfinance Development Bank Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "MMFDBP",
+    "name": "Mirmire Microfinance Development Bank Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "MIDBL",
+    "name": "Mission Development Bank Ltd.",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "MIDBLP",
+    "name": "Mission Development Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "MDB",
+    "name": "Miteri Development Bank Limited",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "MDBPO",
+    "name": "Miteri Development Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "MLBBLP",
+    "name": "Mithila LaghuBitta Bikas Bank Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "MLBBL",
+    "name": "Mithila LaghuBitta Bittiya Sanstha Limited",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "MHNL",
+    "name": "Mountain Hydro Nepal Limited",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "MNBBL",
+    "name": "Muktinath Bikas Bank Ltd.",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "MNBBLP",
+    "name": "Muktinath Bikas Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "MPFL",
+    "name": "Multipurpose Finance Company  Limited",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "MPFLPO",
+    "name": "Multipurpose Finance Company Limited Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "NBF1",
+    "name": "Nabil Balance Fund 1",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "NABIL",
+    "name": "Nabil Bank Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "NABILP",
+    "name": "NABIL Bank Limited Promotor Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "NEF",
+    "name": "Nabil Equity Fund",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "NADEPP",
+    "name": "Nadep Laghubitta Bittiya Sanstha Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "NADEP",
+    "name": "Nadep Laghubittiya bittya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "NBBL",
+    "name": "NagBeli LaghuBitta Bikas Bank Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "NBBLPO",
+    "name": "NagBeli LaghuBitta Bikas Bank Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "NABBC",
+    "name": "Narayani Development Bank Limited",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "NHPC",
+    "name": "National Hydro Power Company Limited",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "NLICL",
+    "name": "National Life Insurance Co. Ltd.",
+    "sector": "Life Insurance"
+  },
+  {
+    "symbol": "NLICLP",
+    "name": "National Life Insurance Co. Ltd. Promoter Share",
+    "sector": "Life Insurance"
+  },
+  {
+    "symbol": "2",
+    "name": "National Life Insurance Co. Ltd. Promoter Share",
+    "sector": "Life Insurance"
+  },
+  {
+    "symbol": "NMFBS",
+    "name": "National Microfinance Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "NMFBSP",
+    "name": "National Microfinance Bittiya Sanstha Ltd. Promoter",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "NNLB",
+    "name": "Naya Nepal Laghubitta Bikas Bank Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "NNLBPO",
+    "name": "Naya Nepal Laghubitta Bikas Bank Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "NILPO",
+    "name": "Neco Insurace Co. Ltd. Promoter",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "NIL",
+    "name": "Neco Insurance Co. Ltd.",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "NAGRO",
+    "name": "Nepal Agro Laghubitta Bittiya Sanstha Limited",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "NBB",
+    "name": "Nepal Bangladesh Bank Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "NBBPO",
+    "name": "Nepal Bangladesh Bank Limited Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "NBL",
+    "name": "Nepal Bank Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "NBBU",
+    "name": "Nepal Bitumin And Barrel Udhyog Limited",
+    "sector": "Manufacturing And Processing"
+  },
+  {
+    "symbol": "NCDB",
+    "name": "Nepal Community Development Bank Ltd.",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "NCDBPO",
+    "name": "Nepal Community Development Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "NCCBPO",
+    "name": "Nepal Credit & Commercial Bank Ltd. Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "NCCB",
+    "name": "Nepal Credit And Commercial Bank Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "NTC",
+    "name": "Nepal Doorsanchar Comapany Limited",
+    "sector": "Others"
+  },
+  {
+    "symbol": "NFD",
+    "name": "Nepal Film Development Company Limited",
+    "sector": "Others"
+  },
+  {
+    "symbol": "NFS",
+    "name": "Nepal Finance Ltd.",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "NFSPO",
+    "name": "Nepal Finance Ltd. Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "NHDL",
+    "name": "Nepal Hydro Developers Ltd.",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "NICLPO",
+    "name": "Nepal Insurance Co. Ltd Promoter Share",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "NICL",
+    "name": "Nepal Insurance Co. Ltd.",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "NIB",
+    "name": "Nepal Investment Bank Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "NIBPO",
+    "name": "Nepal Investment Bank Ltd. Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "NKU",
+    "name": "Nepal Khadya Udhyog Limited",
+    "sector": "Manufacturing And Processing"
+  },
+  {
+    "symbol": "NLIC",
+    "name": "Nepal Life Insurance Co. Ltd.",
+    "sector": "Life Insurance"
+  },
+  {
+    "symbol": "NLICP",
+    "name": "Nepal Life Insurance Co. Ltd. Promoter",
+    "sector": "Life Insurance"
+  },
+  {
+    "symbol": "NLO",
+    "name": "Nepal Lube Oil Limited",
+    "sector": "Manufacturing And Processing"
+  },
+  {
+    "symbol": "SBI",
+    "name": "Nepal SBI Bank Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "SBIPO",
+    "name": "Nepal SBI Bank Ltd. Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "NSEWA",
+    "name": "Nepal Seva Laghubitta Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "NSEWAP",
+    "name": "Nepal Seva Laghubitta Bittiya Sanstha Ltd. promoter share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "NSMPO",
+    "name": "Nepal Share Markets Limited Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "NSM",
+    "name": "Nepal Share Markets Ltd.",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "NTL",
+    "name": "Nepal Tading Limited",
+    "sector": "Tradings"
+  },
+  {
+    "symbol": "NVG",
+    "name": "Nepal Vanaspati Ghee Udhyog Limited",
+    "sector": "Manufacturing And Processing"
+  },
+  {
+    "symbol": "NWC",
+    "name": "Nepal Welfare Company Limited",
+    "sector": "Tradings"
+  },
+  {
+    "symbol": "NLBBL",
+    "name": "Nerude Laghubita Bikas Bank Limited",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "NLBBLP",
+    "name": "Nerude Laghubita Bikas Bank Limited Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "NGPL",
+    "name": "Ngadi Group Power Ltd.",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "NIBLPF",
+    "name": "NIBL Pragati Fund",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "NIBSF1",
+    "name": "NIBL Samriddhi Fund 1",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "NICAP",
+    "name": "NIC Asia Bank Limted Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "NICA",
+    "name": "NIC Asia Bank Ltd.",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "NICGF",
+    "name": "NIC Asia Growth Fund",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "NIDC",
+    "name": "NIDC Development Bank Ltd.",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "NIDCPO",
+    "name": "NIDC Development Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "NUBLPO",
+    "name": "Nirdhan Utthan Bank Limited Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "NUBL",
+    "name": "Nirdhan Utthan Laghubitta Bittiya Sanstha Limited",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "NLG",
+    "name": "NLG Insurance Company Ltd.",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "NLGPO",
+    "name": "NLG Insurance Company Ltd. Promoter Share",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "NMBMF",
+    "name": "NMB  Microfinance Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "NMBMFP",
+    "name": "NMB Microfinance Bittiya Sanstha Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "NMB",
+    "name": "NMB Bank Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "NMBPO",
+    "name": "NMB Bank Limited Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "NMBHF1",
+    "name": "NMB Hybrid Fund L-1",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "NMBSF1",
+    "name": "NMB Sulav Investment Fund-1",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "ODBL",
+    "name": "Om Development Bank Ltd.",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "ODBLPO",
+    "name": "Om Development Bank Ltd. Promoter",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "OHL",
+    "name": "Oriental Hotels Limited",
+    "sector": "Hotels"
+  },
+  {
+    "symbol": "PMHPL",
+    "name": "Panchakanya Mai Hydropower Ltd",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "PPCL",
+    "name": "Panchthar Power Compant Limited",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "PDBLPO",
+    "name": "Paschimanchal Bikash Bank Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "PSDBLP",
+    "name": "Pashupati Development Bank Limited Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "PFLPO",
+    "name": "Pokhara Finance Company Limited Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "PFL",
+    "name": "Pokhara Finance Ltd.",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "PRVU",
+    "name": "Prabhu  Bank Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "PRVUPO",
+    "name": "Prabhu Bank Limited Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "PRFLPO",
+    "name": "Prabhu Finance Ltd. Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "PRINPO",
+    "name": "Prabhu Insurance Company Ltd. Promoter",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "PRIN",
+    "name": "Prabhu Insurance Ltd.",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "PIC",
+    "name": "Premier Insurance Co. Ltd.",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "PICPO",
+    "name": "Premier Insurance Co. Ltd. Promoter Share",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "PCBL",
+    "name": "Prime Commercial Bank Ltd.",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "PCBLP",
+    "name": "Prime Commercial Bank Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "PLIC",
+    "name": "Prime Life Insurance Company Limited",
+    "sector": "Life Insurance"
+  },
+  {
+    "symbol": "PLICPO",
+    "name": "Prime Life Insurance Company Limited Promoter Share",
+    "sector": "Life Insurance"
+  },
+  {
+    "symbol": "PROFLP",
+    "name": "Progressive Finance Limited Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "PROFL",
+    "name": "ProgressiveFinance Limited",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "PICL",
+    "name": "Prudential Insurance Co. Ltd.",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "PICLPO",
+    "name": "Prudential Insurance Co. Ltd. Promoter Share",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "PURBL",
+    "name": "Purnima Bikas Bank Ltd.",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "PURBLP",
+    "name": "Purnima Bikas Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "RADHI",
+    "name": "Radhi Bidyut Company Ltd",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "RJM",
+    "name": "Raghupati Jute Mills Limited",
+    "sector": "Manufacturing And Processing"
+  },
+  {
+    "symbol": "RRHP",
+    "name": "Rairang Hydropower Development Company Ltd.",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "RBCL",
+    "name": "Rastriya Beema Company Limited",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "RBCLPO",
+    "name": "Rastriya Beema Company Limited Promoter Share",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "RLFL",
+    "name": "Reliance Finance Ltd.",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "RLFLPO",
+    "name": "Reliance Finance Ltd. Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "RHPC",
+    "name": "Ridi Hydropower Development Company Ltd.",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "RMDC",
+    "name": "RMDC Laghubitta Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "RMBFPO",
+    "name": "Royal Merchant Bank & Finance Co. Ltd. Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "RSDC",
+    "name": "RSDC Laghubitta Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "RSDCP",
+    "name": "RSDC Laghubitta Bittiya Sanstha Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "RMDCPO",
+    "name": "Rural Microfinance Development Centre Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "SIC",
+    "name": "Sagarmatha Insurance Co. Ltd.",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "SICPO",
+    "name": "Sagarmatha Insurance Co. Ltd. Promoter Share",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "SHBL",
+    "name": "Sahara Bikas Bank Ltd.",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "SHBLPO",
+    "name": "Sahara Bikas Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "SBBLJ",
+    "name": "Sahayogi Bikas Bank Limited",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "SBBLJP",
+    "name": "Sahayogi Bikas Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "STC",
+    "name": "Salt Trading Corporation",
+    "sector": "Tradings"
+  },
+  {
+    "symbol": "SMATA",
+    "name": "Samata Microfinance Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "SMATAP",
+    "name": "Samata Microfinance Bittiya Sanstha Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "SFCPO",
+    "name": "Samjhana Finace Co. Ltd. Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "SFC",
+    "name": "Samjhana Finance Co. Ltd.",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "SLBSL",
+    "name": "Samudayik Laghubitta Bittiya Sanstha Limited",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "SKBBL",
+    "name": "Sana Kisan Bikas Bank Ltd",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "SKBBLP",
+    "name": "Sana Kisan Bikas Bank Ltd Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "SANIMA",
+    "name": "Sanima Bank Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "SAND2085",
+    "name": "Sanima Bank Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "SBBLPO",
+    "name": "Sanima Bank Ltd. Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "SAEF",
+    "name": "Sanima Equity Fund",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "SHPC",
+    "name": "Sanima Mai Hydropower Ltd.",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "SKDBL",
+    "name": "Saptakoshi Development Bank Ltd.",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "SKDBLP",
+    "name": "Saptakoshi Development Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "SADBL",
+    "name": "Shangrila Development Bank Ltd.",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "SADBLP",
+    "name": "Shangrila Development Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "SICL",
+    "name": "Shikhar Insurance Co. Ltd.",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "SICLPO",
+    "name": "Shikhar Insurance Co. Ltd. Promoter",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "SHINE",
+    "name": "Shine Resunga Development Bank Ltd.",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "SHINEP",
+    "name": "Shine Resunga Development Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "SHIVM",
+    "name": "SHIVAM CEMENTS LTD",
+    "sector": "Manufacturing And Processing"
+  },
+  {
+    "symbol": "SBPP",
+    "name": "Shree Bhrikuti Pulp And Paper Limited",
+    "sector": "Manufacturing And Processing"
+  },
+  {
+    "symbol": "SIFCPO",
+    "name": "Shree Investment & Finance Co. Ltd. Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "SIFC",
+    "name": "Shree Investment Finance Co. Ltd.",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "SRS",
+    "name": "Shree Ram Sugar Mills Limited",
+    "sector": "Manufacturing And Processing"
+  },
+  {
+    "symbol": "SFFIL",
+    "name": "Shrijana Finance (Bittaya Sanstha)",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "SFFILP",
+    "name": "Shrijana Finance Ltd. Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "SBL",
+    "name": "Siddhartha Bank Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "SBLPO",
+    "name": "Siddhartha Bank Limited Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "SEF",
+    "name": "Siddhartha Equity Fund",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "SEOS",
+    "name": "Siddhartha Equity Orineted Scheme",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "SIL",
+    "name": "Siddhartha Insurance Ltd.",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "SILPO",
+    "name": "Siddhartha Insurance Ltd. Promoter Share",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "SIGS1",
+    "name": "Siddhartha Investment Growth Scheme-1",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "SINDUP",
+    "name": "Sindhu Bikas Bank Ltd. Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "SINDU",
+    "name": "Sindhu Bikash Bank Ltd",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "SHL",
+    "name": "Soaltee Hotel Limited",
+    "sector": "Hotels"
+  },
+  {
+    "symbol": "SPARS",
+    "name": "Sparsha Laghubitta Bittiya Sanstha Limited",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "SCB",
+    "name": "Standard Chartered Bank Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "SCBPO",
+    "name": "Standard Chartered Bank Limited Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "SMFDB",
+    "name": "Summit Laghubitta Bittiya Sanstha Limited",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "SMFDBP",
+    "name": "Summit Laghubitta Bittiya Sanstha Limited Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "SRBL",
+    "name": "Sunrise Bank Limited",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "SRBLPO",
+    "name": "Sunrise Bank Ltd Promoter Share",
+    "sector": "Commercial Banks"
+  },
+  {
+    "symbol": "SMB",
+    "name": "Support Microfinance Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "SMBPO",
+    "name": "Support Microfinance Bittiya Sanstha Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "SLICLP",
+    "name": "Surya Life Insurance Co. Ltd. Promoter Share",
+    "sector": "Life Insurance"
+  },
+  {
+    "symbol": "SLICL",
+    "name": "Surya Life Insurance Company Limited",
+    "sector": "Life Insurance"
+  },
+  {
+    "symbol": "SLBS",
+    "name": "Suryodaya Laghubitta Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "SWBBL",
+    "name": "Swabalamban Laghubitta Bittiya Sanstha Limited",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "SWBBLP",
+    "name": "Swabalamban Laghubitta Bittiya Sanstha Limited Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "SMFBS",
+    "name": "Swabhimaan Laghubitta Bittiya Sanstha Limited",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "SDESI",
+    "name": "Swadeshi Laghubitta Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "SLBBL",
+    "name": "Swarojgar Laghu Bitta Bikas Bank Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "SLBBLP",
+    "name": "Swarojgar Laghu Bitta Bikas Bank Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "SYFL",
+    "name": "Synergy Finance Ltd.",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "SYFLPO",
+    "name": "Synergy Finance Ltd. Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "SPDL",
+    "name": "Synergy Power Development Ltd.",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "TRH",
+    "name": "Taragaon Regency Hotel Limited",
+    "sector": "Hotels"
+  },
+  {
+    "symbol": "TRHPR",
+    "name": "Taragaon Regency Hotels Ltd. Preference Share",
+    "sector": "Hotels"
+  },
+  {
+    "symbol": "TNBL",
+    "name": "Tinau Development Bank Limited",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "TNBLPO",
+    "name": "Tinau Development Bank Ltd. Promoter",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "UNL",
+    "name": "Unilever Nepal Limited",
+    "sector": "Manufacturing And Processing"
+  },
+  {
+    "symbol": "UNHPL",
+    "name": "Union Hydropower Limited",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "UFLPO",
+    "name": "United Finance Company Limited Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "UFL",
+    "name": "United Finance Ltd.",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "UIC",
+    "name": "United Insurance Co. (Nepal) Ltd.",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "UICPO",
+    "name": "United Insurance Co. (Nepal) Ltd. Promoter Share",
+    "sector": "Non Life Insurance"
+  },
+  {
+    "symbol": "UMHL",
+    "name": "United Modi Hydropower Ltd.",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "UPCL",
+    "name": "UNIVERSAL POWER COMPANY LTD",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "UMB",
+    "name": "Unnati Micorfinance Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "UMBPO",
+    "name": "Unnnati Microfinance Bittya Shansha Ltd Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "UPPER",
+    "name": "Upper Tamakoshi Hydropower Ltd",
+    "sector": "Hydro Power"
+  },
+  {
+    "symbol": "VLBS",
+    "name": "Vijaya laghubitta Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "VLBSPO",
+    "name": "Vijaya laghubitta Bittiya Sanstha Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "WDBL",
+    "name": "Western Development Bank Limited",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "WDBLPO",
+    "name": "Western Development Bank Limited Promoter Share",
+    "sector": "Development Banks"
+  },
+  {
+    "symbol": "WOMI",
+    "name": "Womi Microfinance Bittiya Sanstha Ltd.",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "WOMIPO",
+    "name": "Womi Microfinance Bittiya Sanstha Ltd. Promoter Share",
+    "sector": "Microfinance"
+  },
+  {
+    "symbol": "WMBFPO",
+    "name": "World Merchant Banking & Finance Limited Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "11",
+    "name": "World Merchant Banking & Finance Limited Promoter Share",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "WMBF",
+    "name": "World Merchant Banking & Finance Ltd.",
+    "sector": "Finance"
+  },
+  {
+    "symbol": "YHL",
+    "name": "Yak And Yeti Hotel Limited",
+    "sector": "Hotels"
+  }
+]

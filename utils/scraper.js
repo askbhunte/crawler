@@ -1,7 +1,6 @@
 const config = require("config");
 const axios = require("axios");
 const cheerio = require("cheerio");
-const fs = require("fs");
 const mailer = require("../utils/messenger");
 
 class Scraper {
@@ -19,6 +18,9 @@ class Scraper {
   }
 
   async saveToBotApi(data) {
+    if (data.Conversion) {
+      data = data.Conversion.Currency;
+    }
     let repo = this.repo;
     if (!repo.url) throw "No BOT URL specified";
     repo.method = repo.method || "POST";
