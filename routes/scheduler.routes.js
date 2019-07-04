@@ -9,7 +9,7 @@ const qfxScraper = require("../services/movie/scraper.qfx");
 const myrScraper = require("../services/news/scraper.myr");
 const thtScraper = require("../services/news/scraper.tht");
 const tkpScraper = require("../services/news/scraper.tkp");
-const foodScraper = require("../services/food/scraper.food");
+const foodScraper = require("../services/food/scraper.vendor");
 
 let date = new Date();
 date = date.toTimeString().split(" ")[0];
