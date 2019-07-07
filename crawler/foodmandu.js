@@ -21,11 +21,13 @@ let setup = {
         cuisine: d.CuisineTags,
         logo_image: d.VendorCoverImageName,
         rating: d.VendorRating,
-        cover_image: d.VendorLogoImageName
+        cover_image: d.VendorListingWebImageName
       };
     });
+    console.log("Total Restaurants: " + data.length);
     let a = await axios({ method: "POST", url: botUrl + "/restaurant/feed", data: payload });
     let vendor = [];
+
     for (let i of a.data) {
       let info = {
         vendorId: i.vendorId,
@@ -33,6 +35,7 @@ let setup = {
       };
       vendor.push(info);
     }
+    let counter = 1;
     for (let i of vendor) {
       let { data } = await axios.get(
         `https://foodmandu.com/webapi/api/Product/getproducts?Keyword=&vendorid=${i.vendorId}`
@@ -41,6 +44,8 @@ let setup = {
         e.restaurant = i._id;
       });
       await axios({ method: "POST", url: botUrl + "/food/feed", data: data });
+      console.log(counter);
+      counter++;
     }
     console.log("All Restaurant and Menu added");
     process.exit();

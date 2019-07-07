@@ -9,7 +9,6 @@ const qfxScraper = require("../services/movie/scraper.qfx");
 const myrScraper = require("../services/news/scraper.myr");
 const thtScraper = require("../services/news/scraper.tht");
 const tkpScraper = require("../services/news/scraper.tkp");
-const foodScraper = require("../services/food/scraper.vendor");
 
 let date = new Date();
 date = date.toTimeString().split(" ")[0];
@@ -65,8 +64,7 @@ router.get("/day", async (req, res, next) => {
       horoscope: horoscopeScraper(),
       myr: myrScraper(),
       tht: thtScraper(),
-      tkp: tkpScraper(),
-      food: foodScraper()
+      tkp: tkpScraper()
     };
     let keys = Object.keys(obj);
     let data = [];
@@ -85,7 +83,7 @@ router.get("/day", async (req, res, next) => {
 router.get("/week", async (req, res, next) => {
   try {
     let obj = {
-      food: foodScraper()
+      movies: qfxScraper()
     };
     let keys = Object.keys(obj);
     let data = [];
