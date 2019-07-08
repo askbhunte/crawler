@@ -31,18 +31,18 @@ class QFX {
           baseUrl +
           "/" +
           $(this)
-            .find(".movie-poster > a")
+            .find(".movie-poster a")
             .attr("href"),
         image_url:
           baseUrl +
             "/" +
             $(this)
-              .find(".movie-poster > .img-b")
+              .find(".movie-poster .img-b")
               .attr("src") ||
           baseUrl +
             "/" +
             $(this)
-              .find(".movie-poster > .img-a")
+              .find(".movie-poster .img-a")
               .attr("src"),
         released_date: $(this)
           .find(".movie-date")
@@ -129,7 +129,7 @@ class QFX {
     if (processShows) {
       let showList = await this.processShows(movieList);
     }
-    return movieList;
+    return movieList.length;
   }
 
   async processShows(movieList) {
@@ -152,7 +152,7 @@ class QFX {
       path: "/movies/shows",
       data: showList
     });
-    return showList;
+    return showList.length;
   }
 }
 

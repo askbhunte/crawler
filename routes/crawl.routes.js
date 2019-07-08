@@ -3,9 +3,15 @@ const { SecureUI } = require("../utils/secure");
 const crawler = require("../crawler");
 
 const services = {
-  foodmandu: crawler.foodmandu.process,
-  qfx_movies: crawler.qfx.process,
-  qfx_shows: crawler.qfx.processShows
+  fmd_restaurants: () => {
+    return crawler.foodmandu.processRestaurants();
+  },
+  qfx_movies: () => {
+    return crawler.qfx.process();
+  },
+  qfx_shows: () => {
+    return crawler.qfx.processShows();
+  }
 };
 
 /* GET home page. */
