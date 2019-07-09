@@ -2,8 +2,8 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const config = require("config");
 const moment = require("moment");
+const CrawlUtils = require("./utils");
 
-let botUrl = config.get("services.nepalbot.url") + "/movies";
 let baseUrl = "https://www.qfxcinemas.com";
 
 function getParameterByName(name, url) {
@@ -21,28 +21,28 @@ class QFX {
   async scrapMovieList() {
     let { data } = await axios.get(baseUrl);
     const $ = cheerio.load(data);
-    data = [];
+    let movieList = [];
     $(".movie").each(function(i, elem) {
-      data[i] = {
+      movieList[i] = {
         title: $(this)
           .find(".movie-title")
           .text(),
         url:
           baseUrl +
+          "/" +
           $(this)
-            .find(".movie-poster")
-            .find("a")
+            .find(".movie-poster a")
             .attr("href"),
         image_url:
           baseUrl +
+            "/" +
             $(this)
-              .find(".movie-poster")
-              .find(".img-b")
+              .find(".movie-poster .img-b")
               .attr("src") ||
           baseUrl +
+            "/" +
             $(this)
-              .find(".movie-poster")
-              .find(".img-a")
+              .find(".movie-poster .img-a")
               .attr("src"),
         released_date: $(this)
           .find(".movie-date")
@@ -52,15 +52,16 @@ class QFX {
       };
     });
 
-    data.forEach(d => {
+    movieList.forEach(d => {
       d.vendor = { name: "qfx" };
       try {
         d.status = d.released_date ? "upcoming" : "current";
         d.vendor.id = d.url.substring(d.url.lastIndexOf("=") + 1, d.url.length);
       } catch (e) {}
     });
-    return data;
+    return movieList;
   }
+
   async scrapMovie(movie) {
     if (!movie.vendor.id) return movie;
     let url = baseUrl + "/Home/GetMovieDetails?EventID=" + movie.vendor.id;
@@ -84,6 +85,7 @@ class QFX {
     } catch (e) {}
     return movie;
   }
+
   async scrapShowList(movie) {
     let showStatus = obj => {
       if (obj.hasClass("time-mark-available")) return "available";
@@ -111,34 +113,47 @@ class QFX {
     return shows;
   }
 
-  async exec() {
-    //return this.scrapShowList("7448");
+  async process(processShows = true) {
     let movieList = [];
     let movies = await this.scrapMovieList();
     for (let m of movies) {
       let movie = await this.scrapMovie(m);
       movieList.push(movie);
     }
-    let { data } = await axios({
-      url: botUrl,
-      method: "POST",
+
+    movieList = await CrawlUtils.uploadData({
+      path: "/movies",
       data: movieList
     });
+
+    if (processShows) {
+      let showList = await this.processShows(movieList);
+    }
+    return movieList.length;
+  }
+
+  async processShows(movieList) {
+    if (!movieList) {
+      movieList = await CrawlUtils.getData({
+        path: "/movies?status=current"
+      });
+    }
+    movieList = movieList.filter(d => d.status == "current");
+
     let showList = [];
-    data = data.filter(d => d.status == "current");
-    for (let movie of data) {
-      let shows = await this.scrapShowList(movie);
-      showList = [...showList, ...shows];
+    for (let movie of movieList) {
+      try {
+        let shows = await this.scrapShowList(movie);
+        showList = [...showList, ...shows];
+      } catch (e) {}
     }
 
-    await axios({
-      url: botUrl + "/shows",
-      method: "POST",
+    await CrawlUtils.uploadData({
+      path: "/movies/shows",
       data: showList
     });
-    return movieList;
+    return showList.length;
   }
 }
 
-let qfx = new QFX();
-qfx.exec().then(d => console.log(d));
+module.exports = new QFX();

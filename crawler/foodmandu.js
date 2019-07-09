@@ -1,13 +1,14 @@
 const axios = require("axios");
 const config = require("config");
 const fs = require("fs");
-let setup = {
-  init: async () => {
-    let botUrl = config.get("services.nepalbot.url");
-    let { data } = await axios.get(
-      `https://foodmandu.com/webapi/api/Vendor/GetVendors1?PageSize=1000`
-    );
-    let payload = data.map(d => {
+const CrawlUtils = require("./utils");
+
+const foodmandu_url = "https://foodmandu.com/webapi/api";
+
+class Foodmandu {
+  async scrapRestaurants(upload = true) {
+    let { data } = await axios.get(`${foodmandu_url}/Vendor/GetVendors1?PageSize=1000`);
+    data = data.map(d => {
       return {
         vendorId: d.Id,
         name: d.Name,
@@ -24,32 +25,49 @@ let setup = {
         cover_image: d.VendorListingWebImageName
       };
     });
-    console.log("Total Restaurants: " + data.length);
-    let a = await axios({ method: "POST", url: botUrl + "/restaurant/feed", data: payload });
-    let vendor = [];
 
-    for (let i of a.data) {
-      let info = {
-        vendorId: i.vendorId,
-        _id: i._id
-      };
-      vendor.push(info);
+    if (upload)
+      data = await CrawlUtils.uploadData({
+        path: "/restaurants",
+        data
+      });
+    return data;
+  }
+
+  async scrapMenu(restaurantList) {
+    if (!restaurantList) {
+      restaurantList = await this.scrapRestaurants();
     }
+
     let counter = 1;
-    for (let i of vendor) {
+    for (let i of restaurantList) {
       let { data } = await axios.get(
-        `https://foodmandu.com/webapi/api/Product/getproducts?Keyword=&vendorid=${i.vendorId}`
+        `${foodmandu_url}/Product/getproducts?Keyword=&vendorid=${i.vendorId}`
       );
       data.forEach(e => {
         e.restaurant = i._id;
       });
-      await axios({ method: "POST", url: botUrl + "/food/feed", data: data });
+      data = await CrawlUtils.uploadData({
+        path: "/foods",
+        data
+      });
+
       console.log(counter);
       counter++;
     }
-    console.log("All Restaurant and Menu added");
-    process.exit();
+    return restaurantList.length;
   }
-};
 
-setup.init();
+  async processRestaurants() {
+    let data = await this.scrapRestaurants();
+    return data.length;
+  }
+
+  async process() {
+    let data = await this.scrapMenu();
+    return data;
+  }
+}
+
+let foodmandu = new Foodmandu();
+module.exports = foodmandu;
