@@ -2,12 +2,13 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const config = require("config");
 const moment = require("moment");
+const CrawlUtils = require("./utils");
 
-let botUrl = config.get("services.nepalbot.url");
 let baseUrl = "http://www.fenegosida.org/";
 
-let setup = {
-  init: async () => {
+class Bullion {
+  constructor() {}
+  async scrapeBullion() {
     let { data } = await axios.get(baseUrl);
     const $ = cheerio.load(data);
     data = [];
@@ -28,6 +29,8 @@ let setup = {
             .text()
         };
       });
+    data = data.splice(0, 3);
+
     let date =
       $(".rate-date")
         .find(".rate-date-day")
@@ -49,9 +52,16 @@ let setup = {
       el.date = date;
       el.title = el.title.replace(/[/-]/g, "");
     });
-    data = data.splice(4, 6);
-    await axios({ method: "POST", url: botUrl + "/bullion/feed", data: data });
+    return data;
   }
-};
+  async process() {
+    let bullionList = await this.scrapeBullion();
+    await CrawlUtils.uploadData({
+      path: "/bullion",
+      data: bullionList
+    });
 
-setup.init();
+    return bullionList.length;
+  }
+}
+module.exports = new Bullion();

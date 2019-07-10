@@ -5,8 +5,8 @@ const config = require("config");
 let botUrl = config.get("services.nepalbot.url");
 let baseUrl = "https://nepalipatro.com.np/";
 
-let setup = {
-  init: async () => {
+class Holiday {
+  async scrapHoliday() {
     let { data } = await axios.get(baseUrl);
     const $ = cheerio.load(data);
     data = [];
@@ -36,18 +36,16 @@ let setup = {
             .text()
         };
       });
-    data.forEach(el => {
-      if (el.title.toLowerCase().includes("gold")) {
-        el.image_url = "http://all4desktop.com/data_images/original/4241648-gold.jpg";
-      } else {
-        el.image_url = "https://www.outlawz.ch/resources/Silversilberbarren.jpg";
-      }
-      el.date = date;
-      el.title = el.title.replace(/[/-]/g, "");
-    });
-    data = data.splice(4, 6);
-    await axios({ method: "POST", url: botUrl + "/bullion/feed", data: data });
   }
-};
+  async process() {
+    let holidayList = await this.scrapHoliday();
+    await CrawlUtils.uploadData({
+      path: "/holiday",
+      data: holidayList
+    });
 
-setup.init();
+    return holiday.length;
+  }
+}
+
+module.exports = new Holiday();

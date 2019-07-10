@@ -11,6 +11,18 @@ const services = {
   },
   qfx_shows: () => {
     return crawler.qfx.processShows();
+  },
+  bullion: () => {
+    return crawler.bullion.process();
+  },
+  holiday: () => {
+    return crawler.holiday.process();
+  },
+  horoscope: () => {
+    return crawler.horoscope.process();
+  },
+  stock: () => {
+    return crawler.stock.process();
   }
 };
 
