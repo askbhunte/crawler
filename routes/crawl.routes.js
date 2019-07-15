@@ -6,6 +6,9 @@ const services = {
   fmd_restaurants: () => {
     return crawler.foodmandu.processRestaurants();
   },
+  hospital: () => {
+    return crawler.hospital.process();
+  },
   qfx_movies: () => {
     return crawler.qfx.process();
   },
