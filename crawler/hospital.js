@@ -2,8 +2,6 @@ const axios = require("axios");
 const config = require("config");
 const CrawlUtils = require("./utils");
 
-let botUrl = config.get("services.nepalbot.url");
-
 class Hospital {
   async sleep(milliseconds) {
     var start = new Date().getTime();
@@ -18,15 +16,16 @@ class Hospital {
     let type = "hospital";
     let group_location = [
       "bharatpur",
+      "chitawan",
       "kathmandu",
-      "pokhara"
-      // "biratnagar",
-      // "mahendranagar",
-      // "birgunj",
-      // "lalitpur",
-      // "dharan",
-      // "janakpur",
-      // "butwal"
+      "pokhara",
+      "biratnagar",
+      "mahendranagar",
+      "birgunj",
+      "lalitpur",
+      "dharan",
+      "janakpur",
+      "butwal"
     ];
     for (let i = 0; i < group_location.length; i++) {
       let url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=hospital+in+${
@@ -51,12 +50,23 @@ class Hospital {
       }
     }
 
-    arr.map(element => {
+    let results = [];
+    let unique = Object.values(arr.reduce((acc, cur) => Object.assign(acc, { [cur.id]: cur }), {}));
+
+    for (let element of unique) {
+      let ref = element.photos && element.photos.length ? element.photos[0].photo_reference : null;
+      if (ref) {
+        let { data, ...res } = await axios.get(
+          `https://maps.googleapis.com/maps/api/place/photo?photoreference=${ref}&sensor=false&maxwidth=200&key=AIzaSyDcXL_WOyZoso6rhtOxXrCj01tL4acP4PE`
+        );
+        element.img_src = res.request.res.responseUrl;
+      }
       element.type = type;
       element.lat = element.geometry.location.lat;
       element.long = element.geometry.location.lng;
-    });
-    return arr;
+      results.push(element);
+    }
+    return results;
   }
 
   async process() {
