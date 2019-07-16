@@ -6,11 +6,26 @@ const services = {
   fmd_restaurants: () => {
     return crawler.foodmandu.processRestaurants();
   },
+  hospital: () => {
+    return crawler.hospital.process();
+  },
   qfx_movies: () => {
     return crawler.qfx.process();
   },
   qfx_shows: () => {
     return crawler.qfx.processShows();
+  },
+  bullion: () => {
+    return crawler.bullion.process();
+  },
+  holiday: () => {
+    return crawler.holiday.process();
+  },
+  horoscope: () => {
+    return crawler.horoscope.process();
+  },
+  stock: () => {
+    return crawler.stock.process();
   }
 };
 
