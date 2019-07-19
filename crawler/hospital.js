@@ -61,9 +61,11 @@ class Hospital {
         );
         element.img_src = res.request.res.responseUrl;
       }
+      element.location = {
+        type: "Point",
+        coordinates: [element.geometry.location.lat, element.geometry.location.lng]
+      };
       element.type = type;
-      element.lat = element.geometry.location.lat;
-      element.long = element.geometry.location.lng;
       results.push(element);
     }
     return results;
