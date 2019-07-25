@@ -9,11 +9,17 @@ const services = {
   hospital: () => {
     return crawler.hospital.process();
   },
-  qfx_movies: () => {
+  grande: () => {
+    return crawler.grande.process();
+  },
+  qfx_movies_nowshowing: () => {
     return crawler.qfx.process();
   },
   qfx_shows: () => {
     return crawler.qfx.processShows();
+  },
+  nepalmediciti: () => {
+    return crawler.mediciti.process();
   },
   bullion: () => {
     return crawler.bullion.process();

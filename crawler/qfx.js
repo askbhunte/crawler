@@ -5,7 +5,7 @@ const moment = require("moment");
 const CrawlUtils = require("./utils");
 
 let baseUrl = "https://www.qfxcinemas.com/home";
-let apiUrl = "https://staging.qfxcinemas.com:3000/api/public/NowShowing";
+let apiUrl = "https://api.qfxcinemas.com/api/public/NowShowing";
 
 class QFX {
   constructor() {}
@@ -17,8 +17,7 @@ class QFX {
 
   async process() {
     let movies = await this.scrapMovieList();
-
-    movieList = await CrawlUtils.uploadData({
+    let movieList = await CrawlUtils.uploadData({
       path: "/movies",
       data: movies
     });
