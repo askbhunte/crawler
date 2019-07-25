@@ -15,35 +15,37 @@ class Hospital {
     let arr = [];
     let type = "hospital";
     let group_location = [
-      "bharatpur",
-      "chitawan",
-      "kathmandu",
-      "pokhara",
-      "biratnagar",
-      "mahendranagar",
-      "birgunj",
-      "lalitpur",
-      "dharan",
-      "janakpur",
-      "butwal"
+      "bharatpur"
+      // "chitawan",
+      // "kathmandu",
+      // "pokhara",
+      // "biratnagar",
+      // "mahendranagar",
+      // "birgunj",
+      // "lalitpur",
+      // "dharan",
+      // "janakpur",
+      // "butwal"
     ];
-    for (let i = 0; i < group_location.length; i++) {
-      let url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=hospital+in+${
-        group_location[i]
-      }+nepal&key=AIzaSyDcXL_WOyZoso6rhtOxXrCj01tL4acP4PE`;
+    for (var loc of group_location) {
+      let url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=hospital+in+${loc}+nepal&key=AIzaSyDcXL_WOyZoso6rhtOxXrCj01tL4acP4PE`;
       let { data } = await axios.get(url);
       let res = data.results;
       arr.push(...res);
       var token = data.next_page_token;
       while (true) {
-        this.sleep(1000);
+        this.sleep(2000);
         if (token) {
+          url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=hospital+in+${loc}+nepal&key=AIzaSyDcXL_WOyZoso6rhtOxXrCj01tL4acP4PE`;
           url = url + "&pagetoken=" + encodeURI(token);
           let res = await axios.get(url);
           let nxtData = res.data.results;
           arr.push(...nxtData);
-          if (res.data) token = nxtData.next_page_token;
-          else break;
+          if (res.data) {
+            token = res.data.next_page_token;
+          } else {
+            break;
+          }
         } else {
           break;
         }
