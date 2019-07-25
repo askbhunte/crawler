@@ -18,6 +18,7 @@ class Mediciti {
           .text()
           .split("\n")[1]
           .trim(),
+        source: "Mediciti",
         img_url:
           url +
           $(this)
@@ -47,6 +48,4 @@ class Mediciti {
     return doctorList.length;
   }
 }
-const a = new Mediciti();
 module.exports = new Mediciti();
-a.process();

@@ -18,7 +18,7 @@ const services = {
   qfx_shows: () => {
     return crawler.qfx.processShows();
   },
-  nepalmediciti: () => {
+  mediciti: () => {
     return crawler.mediciti.process();
   },
   bullion: () => {

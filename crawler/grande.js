@@ -27,7 +27,7 @@ class Grande {
             name: $(this)
               .find("h2")
               .text(),
-
+            source: "Grande",
             desc: $(this)
               .find("p")
               .text()
@@ -46,7 +46,6 @@ class Grande {
         return el != null;
       });
       arr.push(...arr);
-      console.log(arr);
     }
     return arr;
   }
