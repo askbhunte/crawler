@@ -3,17 +3,19 @@ const cheerio = require("cheerio");
 const CrawlUtils = require("./utils");
 let baseUrl = "https://www.grandehospital.com/doctors/search?page=";
 class Grande {
-  async pagination() {
-    let { data } = await axios.get(baseUrl);
+  async totalPages() {
+    console.log("+++");
+    let { data } = await axios.get(baseUrl + "1");
     const $ = cheerio.load(data);
-    let page = $(".pagination")
+    return $(".pagination")
       .find("li")
       .find("a").length;
-    return page;
   }
-  async grandeDoc() {
+
+  async listDoctors() {
+    const totalPages = await this.totalPages();
     let arr = [];
-    for (let i = 1; i <= (await this.pagination()); i++) {
+    for (let i = 1; i < totalPages + 1; i++) {
       let { data } = await axios.get(baseUrl + i);
       const $ = cheerio.load(data);
       $(".col-md-3,col-sm-4,col-xs-6").each(function(i, elem) {
@@ -46,17 +48,17 @@ class Grande {
         return el != null;
       });
       arr.push(...arr);
-      console.log(arr);
     }
+    console.log(arr.length);
     return arr;
   }
   async process() {
-    let grandeDoc = await this.grandeDoc();
+    let doctors = await this.listDoctors();
     await CrawlUtils.uploadData({
       path: "/doctors",
-      data: grandeDoc
+      data: doctors
     });
-    return grandeDoc.length;
+    return doctors.length;
   }
 }
 module.exports = new Grande();

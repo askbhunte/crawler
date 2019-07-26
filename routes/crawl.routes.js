@@ -3,7 +3,7 @@ const { SecureUI } = require("../utils/secure");
 const crawler = require("../crawler");
 
 const services = {
-  fmd_restaurants: () => {
+  foodmandu: () => {
     return crawler.foodmandu.processRestaurants();
   },
   hospital: () => {
@@ -12,14 +12,14 @@ const services = {
   grande: () => {
     return crawler.grande.process();
   },
-  qfx_movies_nowshowing: () => {
+  mediciti: () => {
+    return crawler.mediciti.process();
+  },
+  qfx: () => {
     return crawler.qfx.process();
   },
   qfx_shows: () => {
-    return crawler.qfx.processShows();
-  },
-  nepalmediciti: () => {
-    return crawler.mediciti.process();
+    return null; //crawler.qfx.processShows();
   },
   bullion: () => {
     return crawler.bullion.process();

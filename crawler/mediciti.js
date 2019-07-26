@@ -48,5 +48,3 @@ class Mediciti {
   }
 }
 const a = new Mediciti();
-module.exports = new Mediciti();
-a.process();
