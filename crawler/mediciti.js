@@ -18,6 +18,7 @@ class Mediciti {
           .text()
           .split("\n")[1]
           .trim(),
+        source: "Mediciti",
         img_url:
           url +
           $(this)
@@ -32,6 +33,7 @@ class Mediciti {
         desc: $(this)
           .find("p")
           .text()
+          .replace("&nbsp;", " ")
           .replace(/[\n\t]/g, "")
           .trim()
       };
@@ -47,6 +49,4 @@ class Mediciti {
     return doctorList.length;
   }
 }
-const a = new Mediciti();
 module.exports = new Mediciti();
-a.process();

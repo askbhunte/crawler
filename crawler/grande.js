@@ -27,7 +27,7 @@ class Grande {
             name: $(this)
               .find("h2")
               .text(),
-
+            source: "Grande",
             desc: $(this)
               .find("p")
               .text()
