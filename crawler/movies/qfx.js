@@ -2,7 +2,7 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const config = require("config");
 const moment = require("moment-timezone");
-const CrawlUtils = require("./utils");
+const CrawlUtils = require("../utils");
 
 let baseUrl = "https://api.qfxcinemas.com/api/public";
 
@@ -11,6 +11,7 @@ class QFX {
 
   async getCurrent({ withDetails = false, withShows = false }) {
     let { data } = await axios.get(baseUrl + "/NowShowing");
+    console.log(data);
     let movies = data.data.map(d => {
       return {
         name: d.name,
@@ -61,7 +62,7 @@ class QFX {
       .tz("Asia/Kathmandu")
       .format("YYYY-MM-DD");
 
-    console.log("movie shows: " + movie.name);
+    console.log("Movie shows: " + movie.name);
 
     let res = await axios.get(`${baseUrl}/ShowInformation?eventId=${movie.qfx.event_id}`);
     let data = res.data.data;
@@ -83,7 +84,7 @@ class QFX {
   }
 
   async getMovieDetail(movie) {
-    console.log("movie details: " + movie.name);
+    console.log("Movie details: " + movie.name);
     try {
       let details = await axios.get(`${baseUrl}/event?eventId=${movie.qfx.event_id}`);
       movie.rating = details.data.data.eventRating;

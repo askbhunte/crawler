@@ -3,8 +3,9 @@ const cheerio = require("cheerio");
 const config = require("config");
 const moment = require("moment");
 const CrawlUtils = require("./utils");
+const fs = require("fs");
 
-let baseUrl = "http://www.nepalstock.com/";
+let baseUrl = "http://www.nepalstock.com/todaysprice?_limit=500";
 
 class QFX {
   constructor() {}
@@ -61,7 +62,7 @@ class QFX {
       });
 
     data = data.filter(el => el != null);
-    let companies = fs.readFileSync(__dirname + "/companies.json");
+    let companies = fs.readFileSync(__dirname + "/../config/companies.json");
     companies = JSON.parse(companies);
     data = data.map(d => {
       let match = companies.find(c => c.name == d.name);
@@ -107,8 +108,9 @@ class QFX {
   }
   async process() {
     let stockList = await this.scrapStockList();
+    console.log(stockList);
     await CrawlUtils.uploadData({
-      path: "/stock",
+      path: "/stocks",
       data: stockList
     });
 

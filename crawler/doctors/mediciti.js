@@ -1,7 +1,7 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 const config = require("config");
-const CrawlUtils = require("./utils");
+const CrawlUtils = require("../utils");
 
 let botUrl = config.get("services.nepalbot.url");
 let baseUrl = "https://www.nepalmediciti.com/FindAPhysician";
@@ -18,6 +18,7 @@ class Mediciti {
           .text()
           .split("\n")[1]
           .trim(),
+        source: "Mediciti",
         img_url:
           url +
           $(this)
@@ -32,6 +33,7 @@ class Mediciti {
         desc: $(this)
           .find("p")
           .text()
+          .replace("&nbsp;", " ")
           .replace(/[\n\t]/g, "")
           .trim()
       };
@@ -47,4 +49,4 @@ class Mediciti {
     return doctorList.length;
   }
 }
-const a = new Mediciti();
+module.exports = new Mediciti();

@@ -1,7 +1,7 @@
 const axios = require("axios");
 const config = require("config");
 const fs = require("fs");
-const CrawlUtils = require("./utils");
+const CrawlUtils = require("../utils");
 
 const foodmandu_url = "https://foodmandu.com/webapi/api";
 
@@ -58,12 +58,12 @@ class Foodmandu {
     return restaurantList.length;
   }
 
-  async processRestaurants() {
+  async process() {
     let data = await this.scrapRestaurants();
     return data.length;
   }
 
-  async process() {
+  async processMenu() {
     let data = await this.scrapMenu();
     return data;
   }

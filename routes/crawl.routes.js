@@ -2,48 +2,29 @@ const router = require("express").Router();
 const { SecureUI } = require("../utils/secure");
 const crawler = require("../crawler");
 
-const services = {
-  foodmandu: () => {
-    return crawler.foodmandu.processRestaurants();
-  },
-  hospital: () => {
-    return crawler.hospital.process();
-  },
-  grande: () => {
-    return crawler.grande.process();
-  },
-  mediciti: () => {
-    return crawler.mediciti.process();
-  },
-  qfx: () => {
-    return crawler.qfx.process();
-  },
-  qfx_shows: () => {
-    return null; //crawler.qfx.processShows();
-  },
-  bullion: () => {
-    return crawler.bullion.process();
-  },
-  holiday: () => {
-    return crawler.holiday.process();
-  },
-  horoscope: () => {
-    return crawler.horoscope.process();
-  },
-  stock: () => {
-    return crawler.stock.process();
-  }
-};
-
 /* GET home page. */
 router.get("/:service", async (req, res, next) => {
-  let service = services[req.params.service];
-  if (service) {
-    service()
-      .then(d => res.json(d))
-      .catch(next);
-  } else {
-    res.json({ success: false, message: "service does not exist" });
+  try {
+    let func = "process";
+    let serviceString = req.params.service;
+    let funcSep = serviceString.lastIndexOf("::");
+    if (funcSep > -1) func = serviceString.substring(funcSep + 2, serviceString.length);
+
+    let pathEnd = funcSep > -1 ? funcSep : serviceString.length;
+    let pathString = serviceString.substring(0, pathEnd);
+    let paths = pathString.split(">");
+    let selector = crawler;
+    paths.forEach(p => {
+      selector = selector[p];
+    });
+
+    let data = "Not Implemented";
+    if (typeof selector[func] === "function") {
+      data = await selector[func]();
+    }
+    res.json(data);
+  } catch (e) {
+    res.send(e.message);
   }
 });
 

@@ -2,7 +2,7 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const config = require("config");
 const moment = require("moment");
-const CrawlUtils = require("./utils");
+const utils = require("./utils");
 
 let baseUrl = "http://www.fenegosida.org/";
 
@@ -16,20 +16,21 @@ class Bullion {
       .find("div")
       .each(function(i, elem) {
         data[i] = {
-          title: $(this)
+          name: $(this)
             .find("p")
             .clone()
             .children()
             .remove()
             .end()
-            .text(),
-          rate: $(this)
+            .text()
+            .trim(),
+          price: $(this)
             .find("p")
             .find("b")
             .text()
         };
       });
-    data = data.splice(0, 3);
+    data = data.splice(4, 3);
 
     let date =
       $(".rate-date")
@@ -43,25 +44,47 @@ class Bullion {
       $(".rate-date")
         .find(".rate-date-year")
         .text();
+
     data.forEach(el => {
-      if (el.title.toLowerCase().includes("gold")) {
-        el.image_url = "http://all4desktop.com/data_images/original/4241648-gold.jpg";
-      } else {
-        el.image_url = "https://www.outlawz.ch/resources/Silversilberbarren.jpg";
-      }
-      el.date = date;
-      el.title = el.title.replace(/[/-]/g, "");
+      // if (el.name.toLowerCase().includes("gold")) {
+      //   el.data.image_url = "http://all4desktop.com/data_images/original/4241648-gold.jpg";
+      // } else {
+      //   el.data.image_url = "https://www.outlawz.ch/resources/Silversilberbarren.jpg";
+      // }
+      el.name = utils.titleCase(el.name);
+      el.name = el.name.replace(/[/-]/g, "");
+      el.name = el.name.trim();
     });
-    return data;
+    let payload = {
+      fine_gold: {
+        display: data[0].name,
+        price: data[0].price,
+        date: date
+      },
+      tejabi_gold: {
+        display: data[1].name,
+        price: data[1].price,
+        date: date
+      },
+      silver: {
+        display: data[2].name,
+        price: data[2].price,
+        date: date
+      }
+    };
+    return payload;
   }
   async process() {
-    let bullionList = await this.scrapeBullion();
-    await CrawlUtils.uploadData({
-      path: "/bullion",
-      data: bullionList
+    let details = await this.scrapeBullion();
+    let data = await utils.uploadData({
+      path: "/misc",
+      data: {
+        name: "bullion",
+        data: details
+      }
     });
 
-    return bullionList.length;
+    return data;
   }
 }
 module.exports = new Bullion();

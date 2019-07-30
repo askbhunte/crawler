@@ -2,9 +2,8 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const config = require("config");
 
-let botUrl = config.get("services.nepalbot.url");
 let baseUrl = "https://thehimalayantimes.com/category/lifestyle/horoscopes/";
-const CrawlUtils = require("./utils");
+const utils = require("./utils");
 
 let horoscopes = [
   "libra",
@@ -25,30 +24,32 @@ class Horoscope {
   constructor() {}
 
   async scrapHoroscope() {
-    let list = [];
+    let collection = {};
     for (var horoscope of horoscopes) {
       let { data } = await axios.get(baseUrl + horoscope);
       const $ = cheerio.load(data);
-      data = {
-        horoscope,
+      collection[horoscope] = {
+        display: utils.titleCase(horoscope),
         summary: $(".row")
           .find(".col-sm-9")
           .find("p:first-child")
           .text()
       };
-      list.push(data);
     }
-    return list;
+    return collection;
   }
 
   async process() {
-    let horoscopeList = await this.scrapHoroscope();
-    await CrawlUtils.uploadData({
-      path: "/horoscope",
-      data: horoscopeList
+    let details = await this.scrapHoroscope();
+    let result = await utils.uploadData({
+      path: "/misc",
+      data: {
+        name: "horoscope",
+        data: details
+      }
     });
 
-    return horoscopeList.length;
+    return result;
   }
 }
 

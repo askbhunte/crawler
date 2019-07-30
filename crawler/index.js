@@ -1,11 +1,16 @@
 module.exports = {
-  foodmandu: require("./foodmandu"),
-  qfx: require("./qfx"),
+  movies: { qfx: require("./movies/qfx") },
+  doctors: {
+    grande: require("./doctors/grande"),
+    mediciti: require("./doctors/mediciti")
+  },
+  restaurants: { foodmandu: require("./restaurants/foodmandu") },
+  business: {
+    market: require("./market"),
+    stocks: require("./stock")
+  },
   bullion: require("./bullion"),
   holiday: require("./holiday"),
-  stock: require("./stock"),
   horoscope: require("./horoscope"),
-  hospital: require("./hospital"),
-  grande: require("./grande"),
-  mediciti: require("./mediciti")
+  hospital: require("./hospital")
 };
