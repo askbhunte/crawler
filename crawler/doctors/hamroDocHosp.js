@@ -1,6 +1,5 @@
 let axios = require("axios");
 let cheerio = require("cheerio");
-const fs = require("fs");
 let url = "https://www.hamrodoctor.com/hospitals/index/page:";
 let baseUrl = "https://www.hamrodoctor.com";
 class Doctor {
@@ -24,32 +23,45 @@ class Doctor {
         return el.trim().replace("Beds in ", "");
       }
     });
-    $(".col-md-9")
-      .find(".tg-directposthead")
-      .each(function(i, elem) {
+    $(".col-md-6,col-doctor-list").each(function(i, elem) {
+      if (
+        $(this)
+          .find(".col-md-9")
+          .find(".tg-directposthead")
+          .find("h3")
+          .text()
+      )
         list[i] = {
           name: $(this)
+            .find(".col-md-9")
+            .find(".tg-directposthead")
             .find("h3")
             .text()
             .replace("\t", ""),
           link:
             baseUrl +
             $(this)
+              .find(".col-md-9")
+              .find(".tg-directposthead")
               .find("a")
               .attr("href"),
           desc: $(this)
+            .find(".col-md-9")
+            .find(".tg-directposthead")
             .find(".tg-subjects")
             .text()
             .trim(),
           img_url:
-            baseUrl +
-            $(this)
-              .find("figure")
-              .find("img")
-              .attr("src")
+            typeof $(
+              `#doctors > div > div > div:nth-child(${i + 1}) > div.col-md-3 > figure > img`
+            ).attr("data-original") === "string"
+              ? baseUrl +
+                $(
+                  `#doctors > div > div > div:nth-child(${i + 1}) > div.col-md-3 > figure > img`
+                ).attr("data-original")
+              : baseUrl + "/img/def_dr_Male.png"
         };
-      });
-    console.log(list);
+    });
     return { beds, website, list };
   }
   async getPage() {
@@ -100,18 +112,22 @@ class Doctor {
 
       for (let i of arr) {
         let { beds, website, list } = await this.getDoc(i.link);
-        console.log(beds, website);
         i.beds = beds;
         i.website = website;
         i.doc = list;
         elem.push(i);
       }
     }
-    fs.writeFileSync("docs.json", JSON.stringify(elem, null, 4));
-    console.log("File successfully written!");
     return elem;
   }
+  async process() {
+    let hospitalList = await this.getData();
+    console.log(hospitalList);
+    await CrawlUtils.uploadData({
+      path: "/health",
+      data: hospitalList
+    });
+    return hospitalList.length;
+  }
 }
-const a = new Doctor();
-a.getData();
-// module.exports = new Doctor();
+module.exports = new Doctor();
