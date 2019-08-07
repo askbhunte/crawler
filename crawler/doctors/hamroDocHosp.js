@@ -1,5 +1,7 @@
 let axios = require("axios");
 let cheerio = require("cheerio");
+const CrawlUtils = require("../utils");
+
 let url = "https://www.hamrodoctor.com/hospitals/index/page:";
 let baseUrl = "https://www.hamrodoctor.com";
 class Doctor {
@@ -78,7 +80,6 @@ class Doctor {
     return parseInt(page);
   }
   async getData() {
-    let elem = [];
     var arr = [];
     let pagination = await this.getPage();
     for (let i = 1; i <= pagination; i++) {
@@ -86,7 +87,7 @@ class Doctor {
       const html = response.data;
       const $ = cheerio.load(html);
       $(".tg-directpost").each(function(i, elem) {
-        arr[i] = {
+        arr.push({
           name: $(this)
             .find("h3")
             .text(),
@@ -107,24 +108,27 @@ class Doctor {
             $(this)
               .find("img")
               .attr("src")
-        };
+        });
       });
-
-      for (let i of arr) {
-        let { beds, website, list } = await this.getDoc(i.link);
-        i.beds = beds;
-        i.website = website;
-        i.doc = list;
-        elem.push(i);
-      }
+    }
+    return arr;
+  }
+  async mapDocToHospital() {
+    let elem = [];
+    let arr = await this.getData();
+    for (let i of arr) {
+      let { beds, website, list } = await this.getDoc(i.link);
+      i.beds = beds;
+      i.website = website;
+      i.doc = list;
+      elem.push(i);
     }
     return elem;
   }
   async process() {
-    let hospitalList = await this.getData();
-    console.log(hospitalList);
+    let hospitalList = await this.mapDocToHospital();
     await CrawlUtils.uploadData({
-      path: "/health",
+      path: "/hospital",
       data: hospitalList
     });
     return hospitalList.length;
