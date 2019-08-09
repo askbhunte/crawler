@@ -1,6 +1,15 @@
-let axios = require("axios");
-let cheerio = require("cheerio");
+const axios = require("axios");
+const cheerio = require("cheerio");
 const CrawlUtils = require("../utils");
+const NodeGeocoder = require("node-geocoder");
+var options = {
+  provider: "google",
+
+  httpAdapter: "https",
+  apiKey: "AIzaSyDPr_99FndSzeTNoquJebjLHrd4zIOQz04",
+  formatter: null
+};
+var geocoder = NodeGeocoder(options);
 
 let url = "https://www.hamrodoctor.com/hospitals/index/page:";
 let baseUrl = "https://www.hamrodoctor.com";
@@ -20,6 +29,11 @@ class Doctor {
       .eq("0")
       .text()
       .split("|");
+    let hosp_img =
+      baseUrl +
+      $(
+        "#tg-content > div.col-lg-9.col-md-8.col-sm-8.col-xs-12.pull-right > div:nth-child(1) > img"
+      ).attr("src");
     beds = beds.map(el => {
       if (/\d /.test(el)) {
         return el.trim().replace("Beds in ", "");
@@ -53,7 +67,7 @@ class Doctor {
             .find(".tg-subjects")
             .text()
             .trim(),
-          img_url:
+          doc_img:
             typeof $(
               `#doctors > div > div > div:nth-child(${i + 1}) > div.col-md-3 > figure > img`
             ).attr("data-original") === "string"
@@ -64,7 +78,7 @@ class Doctor {
               : baseUrl + "/img/def_dr_Male.png"
         };
     });
-    return { beds, website, list };
+    return { beds, website, list, hosp_img };
   }
   async getPage() {
     let response = await axios(url);
@@ -102,7 +116,8 @@ class Doctor {
             .text(),
           contact: $(this)
             .find("span")
-            .text(),
+            .text()
+            .replace(/[a-zA-Z]/g, ""),
           logo:
             baseUrl +
             $(this)
@@ -113,12 +128,23 @@ class Doctor {
     }
     return arr;
   }
+  async getGeoLoc(payload) {
+    let data = await geocoder.geocode(`${payload} nepal`);
+    let location = {
+      type: "Point",
+      coordinates: [data[0].latitude, data[0].longitude]
+    };
+    return location;
+  }
   async mapDocToHospital() {
     let elem = [];
     let arr = await this.getData();
     for (let i of arr) {
-      let { beds, website, list } = await this.getDoc(i.link);
+      i.location = await this.getGeoLoc(i.name);
+      console.log("herere");
+      let { beds, website, list, hosp_img } = await this.getDoc(i.link);
       i.beds = beds;
+      i.hosp_img = hosp_img;
       i.website = website;
       i.doc = list;
       elem.push(i);
@@ -134,4 +160,6 @@ class Doctor {
     return hospitalList.length;
   }
 }
+// const a = new Doctor();
+// a.getDoc("https://www.hamrodoctor.com/hospital/medicare-national-hospital-research-centre-ltd");
 module.exports = new Doctor();

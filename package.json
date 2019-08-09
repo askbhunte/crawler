@@ -25,6 +25,7 @@
     "moment-timezone": "^0.5.26",
     "mongoose": "^5.2.9",
     "morgan": "~1.9.0",
+    "node-geocoder": "^3.23.0",
     "nodemailer": "^4.6.3",
     "nodemon": "^1.19.1",
     "passport": "^0.4.0",
