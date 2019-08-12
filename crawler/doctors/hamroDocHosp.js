@@ -6,7 +6,7 @@ var options = {
   provider: "google",
 
   httpAdapter: "https",
-  apiKey: "AIzaSyDPr_99FndSzeTNoquJebjLHrd4zIOQz04",
+  apiKey: "AIzaSyDC51QC1eaas70Slrlu3-uNxAXA2tTtZBQ",
   formatter: null
 };
 var geocoder = NodeGeocoder(options);
@@ -130,18 +130,20 @@ class Doctor {
   }
   async getGeoLoc(payload) {
     let data = await geocoder.geocode(`${payload} nepal`);
-    let location = {
-      type: "Point",
-      coordinates: [data[0].latitude, data[0].longitude]
-    };
+    let location = {};
+    if (data && data.length && data[0].latitude) {
+      location = {
+        type: "Point",
+        coordinates: [data[0].latitude, data[0].longitude]
+      };
+    }
     return location;
   }
   async mapDocToHospital() {
     let elem = [];
     let arr = await this.getData();
-    for (let i of arr) {
+    for (var i of arr) {
       i.location = await this.getGeoLoc(i.name);
-      console.log("herere");
       let { beds, website, list, hosp_img } = await this.getDoc(i.link);
       i.beds = beds;
       i.hosp_img = hosp_img;
@@ -152,6 +154,7 @@ class Doctor {
     return elem;
   }
   async process() {
+    console.log("j00000----");
     let hospitalList = await this.mapDocToHospital();
     await CrawlUtils.uploadData({
       path: "/hospital",
@@ -161,5 +164,7 @@ class Doctor {
   }
 }
 // const a = new Doctor();
-// a.getDoc("https://www.hamrodoctor.com/hospital/medicare-national-hospital-research-centre-ltd");
+// a.process()
+//   .then(console.log)
+//   .catch(console.error);
 module.exports = new Doctor();
