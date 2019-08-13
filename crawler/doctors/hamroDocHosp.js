@@ -148,6 +148,7 @@ class Doctor {
       i.beds = beds;
       i.hosp_img = hosp_img;
       i.website = website;
+      i.source = "hamrodoctor";
       i.doc = list;
       elem.push(i);
     }
@@ -163,8 +164,8 @@ class Doctor {
     return hospitalList.length;
   }
 }
-// const a = new Doctor();
-// a.process()
-//   .then(console.log)
-//   .catch(console.error);
-module.exports = new Doctor();
+const a = new Doctor();
+a.process()
+  .then(console.log)
+  .catch(console.error);
+// module.exports = new Doctor();
