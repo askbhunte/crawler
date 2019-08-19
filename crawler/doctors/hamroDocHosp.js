@@ -155,7 +155,6 @@ class Doctor {
     return elem;
   }
   async process() {
-    console.log("j00000----");
     let hospitalList = await this.mapDocToHospital();
     await CrawlUtils.uploadData({
       path: "/hospital",
