@@ -17,7 +17,6 @@ router.get("/:service", async (req, res, next) => {
     paths.forEach(p => {
       selector = selector[p];
     });
-
     let data = "Not Implemented";
     if (typeof selector[func] === "function") {
       data = await selector[func]();

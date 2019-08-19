@@ -2,7 +2,8 @@ module.exports = {
   movies: { qfx: require("./movies/qfx") },
   doctors: {
     grande: require("./doctors/grande"),
-    mediciti: require("./doctors/mediciti")
+    mediciti: require("./doctors/mediciti"),
+    hamro: require("./doctors/hamroDocHosp")
   },
   restaurants: { foodmandu: require("./restaurants/foodmandu") },
   business: {
