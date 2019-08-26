@@ -11,14 +11,13 @@ class QFX {
 
   async getCurrent({ withDetails = false, withShows = false }) {
     let { data } = await axios.get(baseUrl + "/NowShowing");
-    console.log(data);
     let movies = data.data.map(d => {
       return {
         name: d.name,
         summary: d.annotation,
         trailer: d.mediaLink,
         status: "current",
-        release_data: d.releaseDate,
+        release_date: d.releaseDate,
         is_3D: d.is3DMovie,
         thumbnail_url: `${baseUrl}/OneSheetPoster?eventId=${d.eventID}`,
         banner_url: `${baseUrl}/ThumbnailImage?eventId=${d.eventID}`,

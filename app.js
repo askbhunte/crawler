@@ -16,7 +16,7 @@ if (config.has("app.enableSocial")) {
     app.use(passport.initialize());
   }
 }
-mongoose.connect(config.get("db.url"), { useNewUrlParser: true });
+//mongoose.connect(config.get("db.url"), { useNewUrlParser: true });
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
