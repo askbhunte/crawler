@@ -4,7 +4,6 @@ const CrawlUtils = require("../utils");
 const NodeGeocoder = require("node-geocoder");
 var options = {
   provider: "google",
-
   httpAdapter: "https",
   apiKey: "AIzaSyDC51QC1eaas70Slrlu3-uNxAXA2tTtZBQ",
   formatter: null
@@ -155,7 +154,6 @@ class Doctor {
     return elem;
   }
   async process() {
-    console.log("j00000----");
     let hospitalList = await this.mapDocToHospital();
     await CrawlUtils.uploadData({
       path: "/hospital",
@@ -164,8 +162,8 @@ class Doctor {
     return hospitalList.length;
   }
 }
-const a = new Doctor();
-a.process()
-  .then(console.log)
-  .catch(console.error);
-// module.exports = new Doctor();
+// const a = new Doctor();
+// a.process()
+//   .then(console.log)
+//   .catch(console.error);
+module.exports = new Doctor();

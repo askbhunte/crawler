@@ -17,12 +17,32 @@ class NIBL {
     return link;
   }
   async process() {
-    let niblAtm = await this.branch();
-    await CrawlUtils.uploadData({
-      path: "/nibl",
-      data: niblAtm
-    });
-    return niblAtm.length;
+    let processed = [];
+    let data = await this.ATM();
+    for (var i of data) {
+      let payload = {};
+      payload.name = i.name || i;
+      delete i.name;
+      payload.address = i.address;
+      delete i.address;
+      if ((i.lat && i.lng) || (i.latitude || i.longitude)) {
+        payload.location = {
+          type: "Point",
+          coordinates: [parseFloat(i.latitude || i.lat), parseFloat(i.longitude || i.lng)]
+        };
+        delete i.latitude, i.longitude, i.lat, i.lng;
+      }
+      payload.source = "nibl";
+      payload.extras = i;
+      processed.push(payload);
+    }
+    return processed;
   }
 }
+
+// let nib = new NIBL();
+// nib
+//   .process()
+//   .then(console.log)
+//   .catch(console.error);
 module.exports = new NIBL();

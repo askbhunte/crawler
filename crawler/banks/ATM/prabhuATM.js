@@ -27,13 +27,41 @@ class Prabhu {
             .text()
         };
       });
-    console.log(arr);
-    arr = arr.filter(el => {
-      return el.name != null;
-    });
+
     return arr;
+  }
+
+  async process() {
+    let processed = [];
+    let data = await this.branch();
+    for (var i of data) {
+      if (i) {
+        let payload = {};
+        payload.name = i.name || i;
+        delete i.name;
+        payload.address = i.address || i.loc.toString();
+        delete i.address;
+        delete i.loc;
+        if ((i.lat && i.lng) || (i.latitude || i.longitude)) {
+          payload.location = {
+            type: "Point",
+            coordinates: [parseFloat(i.latitude || i.lat), parseFloat(i.longitude || i.lng)]
+          };
+          delete i.latitude;
+          delete i.longitude;
+          delete i.lat;
+          delete i.lng;
+        }
+        payload.source = "prabhu";
+        payload.extras = i;
+        processed.push(payload);
+      }
+    }
+    return processed;
   }
 }
 const a = new Prabhu();
-a.branch();
-// module.exports = new Grande();
+// a.process()
+//   .then(console.log)
+//   .catch(console.error);
+module.exports = new Prabhu();

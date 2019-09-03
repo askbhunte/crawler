@@ -1,7 +1,6 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
-let baseUrl =
-  "https://www.everestbankltd.com/product-and-services/card-services/atm-location/";
+let baseUrl = "https://www.everestbankltd.com/product-and-services/card-services/atm-location/";
 class Everest {
   async branch() {
     let arr = [];
@@ -44,22 +43,35 @@ class Everest {
             //   .text()
           };
       });
-    arr = arr.filter(el => {
-      return el != null;
-    });
-    console.log(arr);
     return arr;
   }
-  //   async process() {
-  //     let grandeDoc = await this.grandeDoc();
-  //     console.log(grandeDoc);
-  //     await CrawlUtils.uploadData({
-  //       path: "/nmb",
-  //       data: grandeDoc
-  //     });
-  //     return grandeDoc.length;
-  //   }
+  async process() {
+    let processed = [];
+    let data = await this.branch();
+    if (!data || !data.length) return [];
+    for (var i of data) {
+      if (i) {
+        let payload = {};
+        payload.name = i.name || i;
+        delete i.name;
+        payload.address = i.loc.toString();
+        delete i.loc;
+        payload.location = {
+          type: "Point",
+          coordinates: [parseFloat(i.lat), parseFloat(i.lng)]
+        };
+        delete i.lat;
+        delete i.lng;
+        payload.source = "everest";
+        payload.extras = i;
+        processed.push(payload);
+      }
+    }
+    return processed;
+  }
 }
-const a = new Everest();
-a.branch();
-// module.exports = new Grande();
+// const a = new Everest();
+// a.process()
+//   .then(console.log)
+//   .catch(console.error);
+module.exports = new Everest();

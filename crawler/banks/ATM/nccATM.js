@@ -34,21 +34,35 @@ class NCC {
           //     .replace(/^\s+|\s+$/g, "")
         };
       });
-    arr = arr.filter(el => {
-      return el != null;
-    });
-    console.log(arr);
+
     return arr;
   }
   async process() {
-    let mega = await this.branch();
-    await CrawlUtils.uploadData({
-      path: "/mega",
-      data: mega
-    });
-    return mega.length;
+    let processed = [];
+    let data = await this.branch();
+    for (var i of data) {
+      if (i) {
+        let payload = {};
+        payload.name = i.name.toString();
+        delete i.name;
+        payload.address = i.loc || "";
+        delete i.loc;
+        payload.location = {
+          type: "Point",
+          coordinates: [parseFloat(i.lat), parseFloat(i.lng)]
+        };
+        delete i.lat;
+        delete i.lng;
+        payload.source = "kumari";
+        payload.extras = i;
+        processed.push(payload);
+      }
+    }
+    return processed;
   }
 }
-const a = new NCC();
-a.branch();
-// module.exports = new Mega();
+// const a = new NCC();
+// a.process()
+//   .then(console.log)
+//   .catch(console.error);
+module.exports = new NCC();

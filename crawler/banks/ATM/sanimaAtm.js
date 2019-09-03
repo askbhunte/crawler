@@ -28,21 +28,41 @@ class Sanima {
           .text()
       };
     });
-    console.log(arr);
-    arr = arr.filter(el => {
-      return el != null;
-    });
+
     return arr;
   }
   async process() {
-    let atm = await this.branch();
-    await CrawlUtils.uploadData({
-      path: "/sanima",
-      data: atm
-    });
-    return atm.length;
+    let processed = [];
+    let data = await this.branch();
+    if (!data || !data.length) return [];
+    for (var i of data) {
+      if (i) {
+        let payload = {};
+        payload.name = i.name || i;
+        delete i.name;
+        payload.address = i.address || i.loc.toString();
+        delete i.address;
+        delete i.loc;
+        if ((i.lat && i.lng) || (i.latitude || i.longitude)) {
+          payload.location = {
+            type: "Point",
+            coordinates: [parseFloat(i.latitude || i.lat), parseFloat(i.longitude || i.lng)]
+          };
+          delete i.latitude;
+          delete i.longitude;
+          delete i.lat;
+          delete i.lng;
+        }
+        payload.source = "prabhu";
+        payload.extras = i;
+        processed.push(payload);
+      }
+    }
+    return processed;
   }
 }
-const a = new Sanima();
-a.branch();
-// module.exports = new Sanima();
+// const a = new Sanima();
+// a.process()
+//   .then(console.log)
+//   .catch(console.error);
+module.exports = new Sanima();
