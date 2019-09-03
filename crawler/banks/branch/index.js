@@ -11,7 +11,7 @@ const sbi = require("./sbiBranch");
 const janata = require("./janataBranch");
 const CrawlUtils = require("../../utils");
 
-let init = async () => {
+exports.process = async () => {
   let data = await [].concat.apply(
     [],
     await Promise.all([
@@ -36,6 +36,6 @@ let init = async () => {
   return data.length;
 };
 
-init()
-  .then(console.log)
-  .catch(console.error);
+// init()
+//   .then(console.log)
+//   .catch(console.error);
