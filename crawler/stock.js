@@ -108,7 +108,6 @@ class QFX {
   }
   async process() {
     let stockList = await this.scrapStockList();
-    console.log(stockList);
     await CrawlUtils.uploadData({
       path: "/stocks",
       data: stockList

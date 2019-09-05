@@ -1,4 +1,5 @@
 module.exports = {
+  banks: { atm: require("./banks/ATM"), branch: require("./banks/branch") },
   movies: { qfx: require("./movies/qfx") },
   doctors: {
     grande: require("./doctors/grande"),

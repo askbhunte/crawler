@@ -4,7 +4,6 @@ const CrawlUtils = require("../utils");
 const NodeGeocoder = require("node-geocoder");
 var options = {
   provider: "google",
-
   httpAdapter: "https",
   apiKey: "AIzaSyB6hR5YIT_wsUfbK1ur5PevdzBx5-XEKB8",
   formatter: null
@@ -163,8 +162,8 @@ class Doctor {
     return hospitalList.length;
   }
 }
-const a = new Doctor();
-a.process()
-  .then(console.log)
-  .catch(console.error);
-// module.exports = new Doctor();
+// const a = new Doctor();
+// a.process()
+//   .then(console.log)
+//   .catch(console.error);
+module.exports = new Doctor();
