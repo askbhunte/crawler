@@ -38,7 +38,7 @@ class Everest {
             // fax: $(this)
             //   .find("td:nth-child(5)")
             //   .text(),
-            // cntct_prsn: $(this)
+            // manager: $(this)
             //   .find("td:nth-child(6)")
             //   .text()
           };
