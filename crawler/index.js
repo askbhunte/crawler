@@ -15,5 +15,6 @@ module.exports = {
   holiday: require("./holiday"),
   horoscope: require("./horoscope"),
   hospital: require("./hospital"),
-  vegetable: require("./vegetable")
+  vegetable: require("./vegetable"),
+  sag: require("./sag")
 };
