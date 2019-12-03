@@ -10,11 +10,9 @@ if (config.has("app.enableSocial")) {
 const crawlRouter = require("./crawl.routes");
 const uiRouter = require("./ui.routes");
 const apiRouter = require("./api.routes");
-const schedulerRouter = require("./scheduler.routes.js");
 
 router.use("/", uiRouter);
 router.use("/crawl", crawlRouter);
 router.use("/api/v1", apiRouter);
-router.use("/scheduler", schedulerRouter);
 
 module.exports = router;

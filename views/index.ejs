@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <% include ./_layouts/head %>
-    <link href="/css/plugins/dataTables/datatables.min.css" rel="stylesheet" />
+    <link href="/assets/css/plugins/dataTables/datatables.min.css" rel="stylesheet" />
     <style>
       .alignstatus {
         align-self: center;
       }
     </style>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.18.0/min/vs/loader.js"
+      integrity="sha256-c3vLHJGmaW4thtkD3xcSLlm2tHRG3nyt49P0DAEuCsQ="
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body class="md-skin">
@@ -17,11 +24,13 @@
       <div id="page-wrapper" class="gray-bg">
         <% include ./_layouts/search %>
 
-        <div class="row wrapper border-bottom white-bg page-heading">
-          <div class="col-sm-4"><h2>This is main title</h2></div>
-          <div class="col-sm-8">
-            <div class="title-action">
-              <a href="" class="btn btn-primary">This is action area</a>
+        <div class="wrapper wrapper-content animated fadeInRight">
+          <div class="row">
+            <div class="col-lg-7">
+              <div id="editor" style="height:600px;border:1px solid grey;"></div>
+            </div>
+            <div class="col-lg-5">
+              <div id="result" style="height:600px;border:1px solid grey;"></div>
             </div>
           </div>
         </div>
@@ -30,6 +39,7 @@
       </div>
     </div>
     <% include ./_layouts/foot %>
+    <script src="/assets/js/app/editor.js"></script>
     <script>
       /*$.ajax({
           url:{api_url},

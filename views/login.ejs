@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/img/favicon.png" />
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png" />
 
     <title>Rumsan - Login</title>
 
-    <link href="/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
-    <link href="/css/animate.css" rel="stylesheet" />
-    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/assets/css/animate.css" rel="stylesheet" />
+    <link href="/assets/css/style.css" rel="stylesheet" />
     <style type="text/css">
       .login-form {
         width: 340px;
@@ -85,8 +85,8 @@
     <div class="loginColumns animated fadeInDown" style="background:white">
       <div class="row">
         <div class="col-md-6 text-center">
-          <img src="/img/logos/rumsan-tech.png" width="160" style="margin-bottom:20px;" />
-          <h1>Rumsan App</h1>
+          <img src="/assets/img/logos/logo.png" width="140" style="margin-bottom:0px;" />
+          <h1>AskBunte Crawler</h1>
         </div>
         <div class="col-md-6">
           <div class="ibox-content">
@@ -117,13 +117,13 @@
                   required=""
                 />
               </div>
-              <p>
+              <!-- <p>
                 <a href="#" data-toggle="modal" data-target="#forgotPassModal">Forgot Password?</a>
-              </p>
+              </p> -->
               <button type="submit" class="btn btn-primary block full-width m-b">
                 Login
               </button>
-              <div class="or-seperator"><i>or</i></div>
+              <!-- <div class="or-seperator"><i>or</i></div>
               <div class="text-center social-btn">
                 <a href="/auth/facebook" class="btn btn-facebook btn-block"
                   ><i class="fa fa-facebook"></i> Sign in with <b>Facebook</b></a
@@ -131,18 +131,20 @@
                 <a href="/auth/google" class="btn btn-danger btn-block"
                   ><i class="fa fa-google"></i> Sign in with <b>Google</b></a
                 >
-              </div>
+              </div> -->
             </form>
             <p class="m-t"><small>Please do not share your login credentials.</small></p>
           </div>
         </div>
       </div>
-      <div id="msg" class="alert alert-danger row ml-3 mr-3"></div>
-      <div id="info" class="alert alert-success row ml-3 mr-3"></div>
+      <div id="msg" class="alert alert-danger row ml-3 mr-3" style="display: none;"></div>
+      <div id="info" class="alert alert-success row ml-3 mr-3" style="display: none;"></div>
       <hr />
       <div class="row">
         <div class="col-md-6">
-          <img src="/img/favicon.png" width="16" />&nbsp;&nbsp;<strong>Client Company Name</strong>
+          <img src="/assets/img/favicon.png" width="16" />&nbsp;&nbsp;<strong
+            >Powered By RumsanTech</strong
+          >
         </div>
         <div class="col-md-6 text-right">
           <small>© 2018 <a href="https://rumsan.com" target="_blank">Rumsan Associates</a></small>
@@ -150,9 +152,8 @@
       </div>
     </div>
     <!-- Mainly scripts -->
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="/assets/js/app/inspinia.js"></script>
+    <script src="/assets/js/plugins/pace/pace.min.js"></script>
 
     <script>
       $(document).ready(function() {
