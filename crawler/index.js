@@ -11,11 +11,13 @@ module.exports = {
     market: require("./market"),
     stocks: require("./stock")
   },
+  news: {
+    hamropatro: require("./news/hamroPatro")
+  },
   bullion: require("./bullion"),
   holiday: require("./holiday"),
   horoscope: require("./horoscope"),
   hospital: require("./hospital"),
   vegetable: require("./vegetable"),
-  sag: require("./sag"),
   forex: require("./forex")
 };
