@@ -11,7 +11,6 @@ class QFX {
 
   async getCurrent({ withDetails = false, withShows = false }) {
     let { data } = await axios.get(baseUrl + "/NowShowing");
-    console.log(data);
     let movies = data.data.map(d => {
       return {
         name: d.name,
@@ -104,7 +103,6 @@ class QFX {
 
   async process() {
     let movies = await this.getMovies();
-
     let movieList = await CrawlUtils.uploadData({
       path: "/movies",
       data: movies

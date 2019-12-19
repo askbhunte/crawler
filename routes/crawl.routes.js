@@ -9,7 +9,6 @@ router.get("/:service", async (req, res, next) => {
     let serviceString = req.params.service;
     let funcSep = serviceString.lastIndexOf("::");
     if (funcSep > -1) func = serviceString.substring(funcSep + 2, serviceString.length);
-
     let pathEnd = funcSep > -1 ? funcSep : serviceString.length;
     let pathString = serviceString.substring(0, pathEnd);
     let paths = pathString.split(">");
