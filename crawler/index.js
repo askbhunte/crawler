@@ -7,6 +7,7 @@ module.exports = {
     hamro: require("./doctors/hamroDocHosp")
   },
   restaurants: { foodmandu: require("./restaurants/foodmandu") },
+  news: { hamropatro: require("./news/hamropatro") },
   business: {
     market: require("./market"),
     stocks: require("./stock")
