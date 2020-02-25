@@ -113,7 +113,7 @@ class QFX {
       data: stockList
     });
 
-    return stockList.length;
+    return stockList;
   }
 }
 
