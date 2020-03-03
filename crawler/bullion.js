@@ -3,6 +3,10 @@ const cheerio = require("cheerio");
 const config = require("config");
 const moment = require("moment");
 const utils = require("./utils");
+var Twitter = require("twitter");
+
+const fs = require("fs");
+let dataFile = __dirname + "/../config/data.json";
 
 let baseUrl = "http://www.fenegosida.org/";
 
@@ -74,6 +78,7 @@ class Bullion {
     };
     return payload;
   }
+
   async process() {
     let details = await this.scrapeBullion();
     let data = await utils.uploadData({
@@ -83,7 +88,41 @@ class Bullion {
         data: details
       }
     });
+    this.tweet();
+    return data;
+  }
 
+  async tweet() {
+    let prevData = utils.getDataFromFile(dataFile);
+    let data = await this.scrapeBullion();
+
+    data["FGLD"] = parseInt(data.fine_gold.price);
+    data["TGLD"] = parseInt(data.tejabi_gold.price);
+    data["SILV"] = parseInt(data.silver.price);
+
+    if (data.FGLD === prevData.bullion.FGLD) return;
+
+    delete data.fine_gold;
+    delete data.tejabi_gold;
+    delete data.silver;
+
+    var client = new Twitter(config.get("services.twitter"));
+
+    let status = `Fine Gold:     NRs. ${data.FGLD +
+      utils.getChangeEmoji(data.FGLD, prevData.bullion.FGLD)}
+Tejabi Gold:  NRs. ${data.TGLD + utils.getChangeEmoji(data.TGLD, prevData.bullion.TGLD)}
+Silver:           NRs. ${data.SILV + utils.getChangeEmoji(data.SILV, prevData.bullion.SILV)}
+    
+#gold #silver #price #nepal #fenegosida #bullion #goldnepal (per tola)`;
+
+    client.post("statuses/update", { status }, function(error, tweets, response) {
+      if (!error) {
+        prevData.bullion = data;
+        fs.writeFileSync(dataFile, JSON.stringify(prevData));
+      } else {
+        console.log(error);
+      }
+    });
     return data;
   }
 }

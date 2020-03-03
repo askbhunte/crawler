@@ -1,5 +1,6 @@
 const axios = require("axios");
 const config = require("config");
+const fs = require("fs");
 
 let botUrl = config.get("services.nepalbot.url");
 
@@ -8,7 +9,7 @@ module.exports = {
     return str
       .toLowerCase()
       .split(" ")
-      .map(function (word) {
+      .map(function(word) {
         return word.replace(word[0], word[0].toUpperCase());
       })
       .join(" ");
@@ -28,5 +29,24 @@ module.exports = {
       method: payload.method || "GET"
     });
     return data;
+  },
+
+  getDataFromFile: dataFile => {
+    let prevData = {};
+    try {
+      prevData = fs.readFileSync(dataFile);
+      prevData = JSON.parse(prevData);
+      prevData = prevData;
+    } catch (e) {
+      console.log(e);
+    }
+    return prevData;
+  },
+
+  getChangeEmoji: (current, prev) => {
+    if (!prev) prev = current;
+    if (current > prev) return "👆🏻";
+    else if (prev > current) return "👇🏻";
+    else return "";
   }
 };

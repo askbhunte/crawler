@@ -1,7 +1,7 @@
 const axios = require("axios");
 const config = require("config");
 var Twitter = require("twitter");
-const CrawlUtils = require("./utils");
+const utils = require("./utils");
 
 const fs = require("fs");
 let dataFile = __dirname + "/../config/data.json";
@@ -15,18 +15,18 @@ class Forex {
   }
   async process() {
     let forexData = await this.scrapeForex();
-    let forexList = await CrawlUtils.uploadData({
+    let forexList = await utils.uploadData({
       path: "/forex/feed",
       data: forexData
     });
 
     this.tweet();
 
-    return forexList.length;
+    return forexData;
   }
 
   async tweet() {
-    let prevData = this.getPreviousData();
+    let prevData = utils.getDataFromFile(dataFile);
     let data = await this.scrapeForex();
 
     data = data.filter(d => ["USD", "GBP", "EUR", "AUD"].includes(d.BaseCurrency));
@@ -37,10 +37,10 @@ class Forex {
     }, {});
     var client = new Twitter(config.get("services.twitter"));
 
-    let status = `1 USD = NRs: ${data.USD + this.getDiff(data.USD, prevData.forex.USD)}
-1 AUD = NRs. ${data.AUD + this.getDiff(data.AUD, prevData.forex.AUD)}
-1 EUR =  NRs. ${data.EUR + this.getDiff(data.EUR, prevData.forex.EUR)}
-1 GBP =  NRs. ${data.GBP + this.getDiff(data.GBP, prevData.forex.GBP)}
+    let status = `1 USD = NRs: ${data.USD + utils.getChangeEmoji(data.USD, prevData.forex.USD)}
+1 AUD = NRs. ${data.AUD + utils.getChangeEmoji(data.AUD, prevData.forex.AUD)}
+1 EUR =  NRs. ${data.EUR + utils.getChangeEmoji(data.EUR, prevData.forex.EUR)}
+1 GBP =  NRs. ${data.GBP + utils.getChangeEmoji(data.GBP, prevData.forex.GBP)}
     
 #dollar #rate #nepal #forex #currency #usd #aud #nepali #rupee`;
 
@@ -53,25 +53,6 @@ class Forex {
       }
     });
     return data;
-  }
-
-  getDiff(current, prev) {
-    if (!prev) prev = current;
-    if (current > prev) return "👆🏻";
-    else if (prev > current) return "👇🏻";
-    else return "";
-  }
-
-  getPreviousData() {
-    let prevData = {};
-    try {
-      prevData = fs.readFileSync(dataFile);
-      prevData = JSON.parse(prevData);
-      prevData = prevData;
-    } catch (e) {
-      console.log(e);
-    }
-    return prevData;
   }
 }
 
