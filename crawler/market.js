@@ -184,7 +184,6 @@ class market {
     var client = new Twitter(config.get("services.twitter"));
 
     let data = await this.scrape();
-    console.log(data);
     let indicator = "🟢";
     let plus = "+";
     if (data.nepse.change < 0) {
