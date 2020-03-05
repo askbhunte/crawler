@@ -3,7 +3,6 @@ const cheerio = require("cheerio");
 const config = require("config");
 const moment = require("moment");
 const CrawlUtils = require("./utils");
-const fs = require("fs");
 var Twitter = require("twitter");
 
 let baseUrl = "http://www.nepalstock.com/";
@@ -102,17 +101,12 @@ class market {
           };
       });
 
-    fs.writeFileSync(
-      __dirname + "/../play/test.html",
-      $("#nepse-stats > div:nth-child(3) > div.panel-body > table:nth-child(2)")
-        .find("tbody")
-        .find("tr")
-    );
-
     market_summary = {
       state: $("#top-notice-bar")
         .text()
-        .trim(),
+        .trim()
+        .replace("Market ", "")
+        .toLowerCase(),
       total_turnover: parseInt(
         market_summary
           .eq(1)
@@ -154,6 +148,7 @@ class market {
       si_life: this.getIndexData(sub_indices, "Life Insurance"),
       si_mutual: this.getIndexData(sub_indices, "Mutual Fund")
     };
+    market_summary.is_open = market_summary.state == "open";
     return market_summary;
   }
 
@@ -189,6 +184,7 @@ class market {
     var client = new Twitter(config.get("services.twitter"));
 
     let data = await this.scrape();
+    console.log(data);
     let indicator = "🟢";
     let plus = "+";
     if (data.nepse.change < 0) {
@@ -196,7 +192,7 @@ class market {
       plus = "";
     }
 
-    let status = `NEPSE:     ${data.nepse.value} (${plus}${data.nepse.change}/${plus}${data.nepse.percent_change}%)
+    let status = `NEPSE:      ${data.nepse.value} (${plus}${data.nepse.change}/${plus}${data.nepse.percent_change}%)
 Sensitive:   ${data.sensitive.value} (${plus}${data.sensitive.change}/${plus}${data.sensitive.percent_change}%) 
     
 ${indicator} #nepse #nepal #stock #nepalstock #market`;
@@ -207,7 +203,7 @@ ${indicator} #nepse #nepal #stock #nepalstock #market`;
         console.log(error);
       }
     });
-    return data;
+    return status;
   }
 }
 
