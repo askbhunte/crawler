@@ -18,5 +18,6 @@ module.exports = {
   hospital: require("./hospital"),
   vegetable: require("./vegetable"),
   sag: require("./sag"),
+  corona: require("./corona"),
   forex: require("./forex")
 };
