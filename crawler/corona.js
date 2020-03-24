@@ -10,9 +10,9 @@ class Crawler {
     let { data } = await axios.get(baseUrl);
     const $ = cheerio.load(data);
     let retData = [];
-    $("#main_table_countries>tbody>tr").each(function(i, elem) {
+    $("#main_table_countries_today>tbody>tr").each(function(i, elem) {
       retData.push({
-        Country: $(this)
+        country: $(this)
           .find("td")
           .eq(0)
           .text()
@@ -89,23 +89,6 @@ class Crawler {
         activeCases: parseInt(
           $(this)
             .find("td")
-            .eq(5)
-            .text()
-            .trim()
-            .replace(",", "")
-        )
-          ? parseInt(
-              $(this)
-                .find("td")
-                .eq(5)
-                .text()
-                .trim()
-                .replace(",", "")
-            )
-          : 0,
-        totalRecovered: parseInt(
-          $(this)
-            .find("td")
             .eq(6)
             .text()
             .trim()
@@ -115,6 +98,23 @@ class Crawler {
               $(this)
                 .find("td")
                 .eq(6)
+                .text()
+                .trim()
+                .replace(",", "")
+            )
+          : 0,
+        totalRecovered: parseInt(
+          $(this)
+            .find("td")
+            .eq(5)
+            .text()
+            .trim()
+            .replace(",", "")
+        )
+          ? parseInt(
+              $(this)
+                .find("td")
+                .eq(5)
                 .text()
                 .trim()
                 .replace(",", "")
@@ -143,12 +143,11 @@ class Crawler {
   }
   async process() {
     let data = await this.scrape();
-    // let resData = await CrawlUtils.uploadData({
-    //   path: "/corona",
-    //   data
-    // });
-    return data;
-    //return resData;
+    let resData = await CrawlUtils.uploadData({
+      path: "/corona",
+      data
+    });
+    return resData.length;
   }
 }
 
