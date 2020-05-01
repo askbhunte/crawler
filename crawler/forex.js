@@ -18,21 +18,21 @@ class Forex {
       .find("tr")
       .each(function (i, elem) {
         retData.push({
-          base_currency: $(this)
+          BaseCurrency: $(this)
             .find(".d-flex")
             .find(".ml-2")
             .text()
             .split(" ")[0]
             .trim()
             .toUpperCase(),
-          target_currency: "NPR",
-          buy: $(this).find("td:nth-child(3)").text(),
-          base_value: $(this).find("td:nth-child(2)").text(),
-          sell: $(this).find("td:nth-child(4)").text(),
-          date: new Date()
+          TargetCurrency: "NPR",
+          TargetBuy: $(this).find("td:nth-child(3)").text(),
+          BaseValue: $(this).find("td:nth-child(2)").text(),
+          TargetSell: $(this).find("td:nth-child(4)").text(),
+          Date: new Date()
         });
       });
-    retData = retData.filter(d => d.base_currency);
+    retData = retData.filter(d => d.BaseCurrency);
     return retData;
   }
   async process() {
