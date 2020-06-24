@@ -1,4 +1,5 @@
 const axios = require("axios");
+const https = require("https");
 const config = require("config");
 let Twitter = require("twitter");
 const utils = require("./utils");
@@ -7,11 +8,17 @@ const cheerio = require("cheerio");
 const fs = require("fs");
 let dataFile = __dirname + "/../config/data.json";
 
-let baseUrl = "http://www.nrb.org.np/forex";
+let baseUrl = "https://www.nrb.org.np/forex";
 
 class Forex {
   async scrapeForex() {
-    let { data } = await axios.get(baseUrl);
+    var instance = axios.create({
+      baseURL: baseUrl,
+      httpsAgent: new https.Agent({
+        rejectUnauthorized: false
+      })
+    });
+    let { data } = await instance.get(baseUrl);
     const $ = cheerio.load(data);
     let retData = [];
     $(".table-forex")
