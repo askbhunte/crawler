@@ -2,40 +2,44 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const config = require("config");
 
-let baseUrl = "https://thehimalayantimes.com/category/lifestyle/horoscopes/";
+let baseUrl = "https://kathmandupost.com/horoscope";
 const utils = require("./utils");
 
 let horoscopes = [
-  "libra",
   "aries",
+  "taurus",
+  "gemini",
+  "cancer",
   "leo",
   "virgo",
+  "libra",
   "scorpio",
   "sagittarius",
   "capricorn",
   "aquarius",
   "pisces",
-  "gemini",
-  "cancer",
-  "taurus"
 ];
 
 class Horoscope {
-  constructor() {}
+  constructor() { }
 
   async scrapHoroscope() {
     let collection = {};
-    for (var horoscope of horoscopes) {
-      let { data } = await axios.get(baseUrl + horoscope);
-      const $ = cheerio.load(data);
-      collection[horoscope] = {
-        display: utils.titleCase(horoscope),
-        summary: $(".row")
-          .find(".col-sm-9")
-          .find("p:first-child")
+    let { data } = await axios.get(baseUrl);
+    const $ = cheerio.load(data);
+    $(".horoscope .col-md-6").each(function (i, elem) {
+      collection[horoscopes[i]] = {
+        display: $(this)
+          .find("h5")
           .text()
+          .trim(),
+        summary: $(this)
+          .find('p')
+          .text()
+          .replace(/\*/g, '')
+          .trim()
       };
-    }
+    });
     return collection;
   }
 
