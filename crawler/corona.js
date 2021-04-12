@@ -10,38 +10,21 @@ class Crawler {
     let { data } = await axios.get(baseUrl);
     const $ = cheerio.load(data);
     let retData = [];
-    $("#main_table_countries_today>tbody>tr").each(function(i, elem) {
+    $("#main_table_countries_today>tbody:nth-child(2)>tr").each(function(i, elem) {
       retData.push({
         country: $(this)
           .find("td")
-          .eq(0)
+          .eq(1)
           .text()
           .trim()
           .replace("Total:", ""),
         totalCases: parseInt(
           $(this)
             .find("td")
-            .eq(1)
-            .text()
-            .trim()
-            .replace(",", "")
-        )
-          ? parseInt(
-              $(this)
-                .find("td")
-                .eq(1)
-                .text()
-                .trim()
-                .replace(",", "")
-            )
-          : 0,
-        newCases: parseInt(
-          $(this)
-            .find("td")
             .eq(2)
             .text()
             .trim()
-            .replace(",", "")
+            .replace(/,/gi, "")
         )
           ? parseInt(
               $(this)
@@ -49,10 +32,10 @@ class Crawler {
                 .eq(2)
                 .text()
                 .trim()
-                .replace(",", "")
+                .replace(/,/gi, "")
             )
           : 0,
-        totalDeaths: parseInt(
+        newCases: parseInt(
           $(this)
             .find("td")
             .eq(3)
@@ -66,10 +49,10 @@ class Crawler {
                 .eq(3)
                 .text()
                 .trim()
-                .replace(",", "")
+                .replace(/,/gi, "")
             )
           : 0,
-        newDeaths: parseInt(
+        totalDeaths: parseInt(
           $(this)
             .find("td")
             .eq(4)
@@ -83,27 +66,10 @@ class Crawler {
                 .eq(4)
                 .text()
                 .trim()
-                .replace(",", "")
+                .replace(/,/gi, "")
             )
           : 0,
-        activeCases: parseInt(
-          $(this)
-            .find("td")
-            .eq(6)
-            .text()
-            .trim()
-            .replace(",", "")
-        )
-          ? parseInt(
-              $(this)
-                .find("td")
-                .eq(6)
-                .text()
-                .trim()
-                .replace(",", "")
-            )
-          : 0,
-        totalRecovered: parseInt(
+        newDeaths: parseInt(
           $(this)
             .find("td")
             .eq(5)
@@ -117,10 +83,10 @@ class Crawler {
                 .eq(5)
                 .text()
                 .trim()
-                .replace(",", "")
+                .replace(/,/gi, "")
             )
           : 0,
-        criticalCases: parseInt(
+        activeCases: parseInt(
           $(this)
             .find("td")
             .eq(7)
@@ -134,7 +100,41 @@ class Crawler {
                 .eq(7)
                 .text()
                 .trim()
-                .replace(",", "")
+                .replace(/,/gi, "")
+            )
+          : 0,
+        totalRecovered: parseInt(
+          $(this)
+            .find("td")
+            .eq(6)
+            .text()
+            .trim()
+            .replace(",", "")
+        )
+          ? parseInt(
+              $(this)
+                .find("td")
+                .eq(6)
+                .text()
+                .trim()
+                .replace(/,/gi, "")
+            )
+          : 0,
+        criticalCases: parseInt(
+          $(this)
+            .find("td")
+            .eq(8)
+            .text()
+            .trim()
+            .replace(",", "")
+        )
+          ? parseInt(
+              $(this)
+                .find("td")
+                .eq(8)
+                .text()
+                .trim()
+                .replace(/,/gi, "")
             )
           : 0
       });
@@ -143,11 +143,11 @@ class Crawler {
   }
   async process() {
     let data = await this.scrape();
-    let resData = await CrawlUtils.uploadData({
-      path: "/corona",
-      data
-    });
-    return resData.length;
+    // let resData = await CrawlUtils.uploadData({
+    //   path: "/corona",
+    //   data
+    // });
+    return data;
   }
 }
 
