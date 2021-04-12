@@ -143,11 +143,11 @@ class Crawler {
   }
   async process() {
     let data = await this.scrape();
-    // let resData = await CrawlUtils.uploadData({
-    //   path: "/corona",
-    //   data
-    // });
-    return data;
+    let resData = await CrawlUtils.uploadData({
+      path: "/corona",
+      data
+    });
+    return resData.length;
   }
 }
 
