@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
-const { RoleManager } = require("rs-user");
-const config = require("config");
-const { DataUtils, TextUtils, Error, ERR } = require("../../utils");
+const { Role } = require("rs-user");
+const { DataUtils, TextUtils } = require("../../utils");
 
-class RoleController extends RoleManager {
+class RoleController extends Role {
   async listRoles({ limit, start, search }) {
     let filter = {};
     if (search)

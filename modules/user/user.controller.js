@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
-const { ObjectId } = mongoose.Schema;
 const config = require("config");
-const { UserManager, Utils } = require("rs-user");
+const { User } = require("rs-user");
 
-const { TextUtils, DataUtils, ERR } = require("../../utils");
+const { DataUtils, ERR } = require("../../utils");
 const messenger = require("../../utils/messenger");
 const RoleController = require("../role/role.controller");
 
@@ -14,7 +13,7 @@ const createTokenData = async user => {
   };
 };
 
-class UserController extends UserManager {
+class UserController extends User {
   login({ username, password, rememberMe = false }) {
     return this.authenticate({
       username,
