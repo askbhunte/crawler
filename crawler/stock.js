@@ -1,13 +1,12 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
-const config = require("config");
-const moment = require("moment");
 const CrawlUtils = require("./utils");
 const fs = require("fs");
 
 let baseUrl = "http://www.nepalstock.com/todaysprice?_limit=500";
+let companyUrl = "http://www.nepalstock.com/company?_limit=500";
 
-class QFX {
+class Stocks {
   constructor() {}
   async scrapStockList() {
     let { data } = await axios.get(baseUrl);
@@ -106,6 +105,33 @@ class QFX {
     data = data.filter(el => el != null);
     return data;
   }
+
+  async getAllNepseCompanies() {
+    let { data } = await axios.get(companyUrl);
+    const $ = cheerio.load(data);
+    data = [];
+    $("table")
+      .find("tr:not(:first-child,:nth-child(2))")
+      .each(function(i, elem) {
+        data[i] = {
+          symbol: $(this)
+            .find("td")
+            .eq(3)
+            .text(),
+          name: $(this)
+            .find("td")
+            .eq(2)
+            .text()
+            .replace(/[\n]/g, "").trim(),
+          sector: $(this)
+          .find("td")
+          .eq(4)
+          .text()
+          .replace(/[\n]| +/g, "")
+        };
+      });
+    return data;
+  }
   async process() {
     let stockList = await this.scrapStockList();
     await CrawlUtils.uploadData({
@@ -117,4 +143,4 @@ class QFX {
   }
 }
 
-module.exports = new QFX();
+module.exports = new Stocks();
