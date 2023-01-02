@@ -30,7 +30,7 @@ class Hospital {
     for (let i = 0; i < group_location.length; i++) {
       let url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=hospital+in+${
         group_location[i]
-      }+nepal&key=AIzaSyDcXL_WOyZoso6rhtOxXrCj01tL4acP4PE`;
+      }+nepal&key=`;
       let { data } = await axios.get(url);
       let res = data.results;
       arr.push(...res);
@@ -57,7 +57,7 @@ class Hospital {
       let ref = element.photos && element.photos.length ? element.photos[0].photo_reference : null;
       if (ref) {
         let { data, ...res } = await axios.get(
-          `https://maps.googleapis.com/maps/api/place/photo?photoreference=${ref}&sensor=false&maxwidth=200&key=AIzaSyDcXL_WOyZoso6rhtOxXrCj01tL4acP4PE`
+          `https://maps.googleapis.com/maps/api/place/photo?photoreference=${ref}&sensor=false&maxwidth=200&key=`
         );
         element.img_src = res.request.res.responseUrl;
       }
